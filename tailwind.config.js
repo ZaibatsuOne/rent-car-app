@@ -105,6 +105,10 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        "hero-pattern-one": "url('/BG.png')",
+        "hero-pattern-two": "url('/bgHeroTwo.png')",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

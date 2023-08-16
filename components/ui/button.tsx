@@ -14,6 +14,7 @@ const buttonVariants = cva(
           "bg-white border border-solid border-secondary400 text-secondary500 active:border-secondary300 active:bg-primary100",
         minimal:
           "text-secondary400 hover:text-secondary500 hover:bg-primary100 active:text-secondary500 active:bg-secondary300",
+        reversed: "text-primary500",
       },
       size: {
         default: "h-10 px-4 py-2",
