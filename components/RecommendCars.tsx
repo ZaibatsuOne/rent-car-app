@@ -2,14 +2,13 @@ import { FC } from "react";
 import SectionBar from "./SectionBar";
 import CarCard from "./CarCard";
 import { cars } from "@/data/cars";
-
-const PopularCar: FC = () => {
+const RecommendCars: FC = () => {
   return (
     <section className="flex flex-col gap-5">
-      <SectionBar title="Popular car" button={true} />
+      <SectionBar title="Recomendation Car" button={false} />
       <section className="grid grid-cols-4 gap-8">
         {cars
-          .filter((cars) => cars.priority === "popular")
+          .filter((car) => car.priority === "recommended")
           .map((car) => (
             <CarCard car={car} />
           ))}
@@ -18,4 +17,4 @@ const PopularCar: FC = () => {
   );
 };
 
-export default PopularCar;
+export default RecommendCars;

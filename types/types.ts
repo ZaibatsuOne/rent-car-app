@@ -5,3 +5,13 @@ export interface IHeroBanner {
   car: string;
   background: string;
 }
+
+export interface ICar {
+  name: string;
+  type: string;
+  gas: number;
+  capacity: number;
+  image: string;
+  priority: string;
+  price: number;
+}
