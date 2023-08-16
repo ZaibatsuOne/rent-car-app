@@ -16,7 +16,32 @@ export const heroSectionData = [
     background: "hero-section-one",
   },
 ];
-
+export const carType = [
+  {
+    id: "sport",
+    name: "Sport",
+  },
+  {
+    id: "suv",
+    name: "SUV",
+  },
+  {
+    id: "mpv",
+    name: "MPV",
+  },
+  {
+    id: "sedan",
+    name: "Sedan",
+  },
+  {
+    id: "coupe",
+    name: "Coupe",
+  },
+  {
+    id: "hatchback",
+    name: "Hatchback",
+  },
+];
 export const footerColumn = [
   {
     id: 1,

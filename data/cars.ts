@@ -1,5 +1,6 @@
 export const cars = [
   {
+    id: 1,
     name: "Koenigsegg",
     type: "sport",
     gas: 90,
@@ -9,6 +10,7 @@ export const cars = [
     price: 99.0,
   },
   {
+    id: 2,
     name: "Nissan GT - R",
     type: "sport",
     gas: 80,
@@ -18,6 +20,7 @@ export const cars = [
     price: 80.0,
   },
   {
+    id: 3,
     name: "Rolls - Royce",
     type: "Sedan",
     gas: 70,
@@ -27,6 +30,7 @@ export const cars = [
     price: 96.0,
   },
   {
+    id: 4,
     name: "Nissan GT - R",
     type: "sport",
     gas: 80,
@@ -36,6 +40,7 @@ export const cars = [
     price: 80.0,
   },
   {
+    id: 5,
     name: "All New Rush",
     type: "SUV",
     gas: 70,
@@ -45,6 +50,7 @@ export const cars = [
     price: 72.0,
   },
   {
+    id: 6,
     name: "CR  - V",
     type: "SUV",
     gas: 80,
@@ -54,6 +60,7 @@ export const cars = [
     price: 80.0,
   },
   {
+    id: 7,
     name: "All New Terios",
     type: "SUV",
     gas: 90,
@@ -63,6 +70,7 @@ export const cars = [
     price: 74.0,
   },
   {
+    id: 8,
     name: "CR-V-BLACK",
     type: "SUV",
     gas: 80,
@@ -72,6 +80,7 @@ export const cars = [
     price: 80.0,
   },
   {
+    id: 9,
     name: "MG ZX Exclusice",
     type: "Hatchback",
     gas: 70,
@@ -81,6 +90,7 @@ export const cars = [
     price: 76.0,
   },
   {
+    id: 10,
     name: "New MG ZS",
     type: "SUV",
     gas: 80,
@@ -90,6 +100,7 @@ export const cars = [
     price: 80.0,
   },
   {
+    id: 11,
     name: "MG ZX Excite",
     type: "Hatchback",
     gas: 90,
@@ -99,6 +110,7 @@ export const cars = [
     price: 74.0,
   },
   {
+    id: 12,
     name: "New MG ZSgray",
     type: "SUV",
     gas: 80,
