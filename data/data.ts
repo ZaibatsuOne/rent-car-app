@@ -16,3 +16,72 @@ export const heroSectionData = [
     background: "hero-section-one",
   },
 ];
+
+export const footerColumn = [
+  {
+    id: 1,
+    title: "about",
+    subtitle: [
+      {
+        name: "How it works",
+        link: "/how",
+      },
+      {
+        name: "Featured",
+        link: "/featured",
+      },
+      {
+        name: "Partnership",
+        link: "partnership",
+      },
+      {
+        name: "Bussiness Relation",
+        link: "/bussiness",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "community",
+    subtitle: [
+      {
+        name: "Events",
+        link: "/events",
+      },
+      {
+        name: "Blog",
+        link: "/blog",
+      },
+      {
+        name: "Podcast",
+        link: "podcast",
+      },
+      {
+        name: "Invite a friend",
+        link: "/invite",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "socials",
+    subtitle: [
+      {
+        name: "Discord",
+        link: "/discord",
+      },
+      {
+        name: "Instagram",
+        link: "/instagram",
+      },
+      {
+        name: "Twitter",
+        link: "/twitter",
+      },
+      {
+        name: "Facebook",
+        link: "/facebook",
+      },
+    ],
+  },
+];

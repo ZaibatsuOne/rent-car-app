@@ -15,3 +15,14 @@ export interface ICar {
   priority: string;
   price: number;
 }
+
+export interface IFooterSubtitle {
+  name: string;
+  link: string;
+}
+
+export interface IFooter {
+  id: number;
+  title: string;
+  subtitle: IFooterSubtitle[];
+}

@@ -1,18 +1,17 @@
-import { FC } from "react";
 import PopularCar from "./PopularCar";
 import RecommendCars from "./RecommendCars";
 import { Button } from "./ui/button";
+import { FC } from "react";
 
 const Catalogue: FC = () => {
   return (
-    <section className="flex flex-col gap-8 pt-8">
+    <section className="flex flex-col gap-8 pt-8 pb">
       <PopularCar />
       <RecommendCars />
-      <div className="flex items-center justify-center">
-        <Button className="flex justify-center items-center">
+      <div className="flex items-center justify-center pt-24">
+        <Button size="lg" href="/dashboard">
           Show more car
         </Button>
-        <span className="justify-center">120 cars</span>
       </div>
     </section>
   );

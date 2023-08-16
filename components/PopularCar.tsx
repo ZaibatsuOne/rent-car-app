@@ -11,7 +11,7 @@ const PopularCar: FC = () => {
         {cars
           .filter((cars) => cars.priority === "popular")
           .map((car) => (
-            <CarCard car={car} />
+            <CarCard car={car} key={car.image} />
           ))}
       </section>
     </section>

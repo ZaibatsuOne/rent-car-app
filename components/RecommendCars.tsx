@@ -10,7 +10,7 @@ const RecommendCars: FC = () => {
         {cars
           .filter((car) => car.priority === "recommended")
           .map((car) => (
-            <CarCard car={car} />
+            <CarCard car={car} key={car.image} />
           ))}
       </section>
     </section>
