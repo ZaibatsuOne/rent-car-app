@@ -13,9 +13,8 @@ const SearchBar: FC = () => {
         onChange={(e) => setSearchValue(e.target.value)}
         type="text"
         placeholder="Search something here"
-        className="outline-none py-[2px] px-2"
+        className="outline-none py-[2px] px-2 "
       />
-      <Settings2 />
     </div>
   );
 };

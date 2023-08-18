@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("container max-w-[1348px]", jakarta.className)}>
         <ProviderClient>
-          {/* <NavBar /> */}
+          <NavBar />
           {children}
           {/* <Footer /> */}
         </ProviderClient>
