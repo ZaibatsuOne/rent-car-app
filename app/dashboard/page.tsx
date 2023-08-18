@@ -37,11 +37,13 @@ const Dashboard = () => {
     let filteredCars = data;
 
     if (selectedTypes.length > 0) {
-      filteredCars = data?.filter((car) => selectedTypes.includes(car.type));
+      filteredCars = filteredCars?.filter((car) =>
+        selectedTypes.includes(car.type)
+      );
     }
 
     if (selectedCapacity.length > 0) {
-      filteredCars = data?.filter((car) =>
+      filteredCars = filteredCars?.filter((car) =>
         selectedCapacity.includes(car.capacity)
       );
     }
