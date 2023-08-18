@@ -26,7 +26,7 @@ export default function RootLayout({
         <ProviderClient>
           <NavBar />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </ProviderClient>
       </body>
     </html>
