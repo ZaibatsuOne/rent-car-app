@@ -1,7 +1,7 @@
-import { FC } from "react";
-import SectionBar from "./SectionBar";
 import CarCard from "./CarCard";
+import SectionBar from "./SectionBar";
 import { cars } from "@/data/cars";
+import { FC } from "react";
 
 const PopularCar: FC = () => {
   return (

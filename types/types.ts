@@ -7,6 +7,7 @@ export interface IHeroBanner {
 }
 
 export interface ICar {
+  id: number;
   name: string;
   type: string;
   gas: number;

@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { FC } from "react";
 import { IHeroBanner } from "@/types/types";
-import { cn } from "@/lib/utils";
 
 interface Props {
   hero: IHeroBanner;
@@ -17,7 +16,6 @@ const HeroItem: FC<Props> = ({ hero }) => {
           : "bg-primary500 bg-hero-pattern-two"
       }`}
     >
-      {" "}
       <div className="flex flex-col gap-5 text-white w-1/2">
         <div className="flex flex-col gap-4">
           <h2 className="font-semibold text-3xl">{title} </h2>

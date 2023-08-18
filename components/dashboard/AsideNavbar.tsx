@@ -1,32 +1,19 @@
-import { FC } from "react";
+import TypeFilter from "../TypeFilter";
 import { Checkbox } from "../ui/checkbox";
+import { FC } from "react";
 import { Slider } from "../ui/slider";
-import { carType } from "@/data/data";
-import { TypeFilter } from "../TypeFilter";
 
-const AsideNavbar = () => {
+interface Props {
+  selectedTypes: string[];
+  onTypeChange: (type: string) => void;
+}
+
+const AsideNavbar: FC<Props> = ({ selectedTypes, onTypeChange }) => {
   const capacity = [2, 4, 6, 8];
 
   return (
     <aside className="flex flex-col gap-14 w-60">
-      <TypeFilter />
-      <nav className="flex flex-col gap-7">
-        <span className="text-sm uppercase font-medium text-secondary300">
-          Type
-        </span>
-
-        <ul className="flex flex-col gap-1">
-          {carType.map((item) => (
-            <li
-              key={item.id}
-              className="flex items-center gap-2 font-semibold text-lg text-secondary400"
-            >
-              <Checkbox />
-              <span>{item.name}</span>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <TypeFilter selectedTypes={selectedTypes} onTypeChange={onTypeChange} />
       <nav className="flex flex-col gap-7">
         <span className="text-sm uppercase font-medium text-secondary300">
           Capacity

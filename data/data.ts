@@ -19,7 +19,7 @@ export const heroSectionData = [
 export const carType = [
   {
     id: "sport",
-    name: "Sport",
+    name: "sport",
   },
   {
     id: "suv",

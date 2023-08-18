@@ -1,14 +1,13 @@
 "use client";
 
+import * as z from "zod";
+import { FC } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -21,15 +20,20 @@ const FormSchema = z.object({
     message: "You have to select at least one item.",
   }),
 });
-
-export function TypeFilter() {
+interface Props {
+  selectedTypes: string[];
+  onTypeChange: (type: string) => void;
+}
+const TypeFilter: FC<Props> = ({ selectedTypes, onTypeChange }) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       items: ["recents", "home"],
     },
   });
-
+  const handleCheckboxChange = (type: string) => {
+    onTypeChange(type);
+  };
   return (
     <Form {...form}>
       <form className="space-y-8">
@@ -39,10 +43,9 @@ export function TypeFilter() {
           render={() => (
             <FormItem>
               <div className="mb-4">
-                <FormLabel className="text-base">Sidebar</FormLabel>
-                <FormDescription>
-                  Select the items you want to display in the sidebar.
-                </FormDescription>
+                <FormLabel className="text-sm text-secondary300">
+                  TYPE
+                </FormLabel>
               </div>
               {carType.map((item) => (
                 <FormField
@@ -53,23 +56,17 @@ export function TypeFilter() {
                     return (
                       <FormItem
                         key={item.id}
-                        className="flex flex-row items-start space-x-3 space-y-0"
+                        className="flex flex-row items-center gap-2 space-y-0"
                       >
                         <FormControl>
                           <Checkbox
-                            checked={field.value?.includes(item.id)}
-                            onCheckedChange={(checked) => {
-                              return checked
-                                ? field.onChange([...field.value, item.id])
-                                : field.onChange(
-                                    field.value?.filter(
-                                      (value) => value !== item.id
-                                    )
-                                  );
-                            }}
+                            checked={selectedTypes.includes(item.name)}
+                            onCheckedChange={() =>
+                              handleCheckboxChange(item.name)
+                            }
                           />
                         </FormControl>
-                        <FormLabel className="font-normal">
+                        <FormLabel className="text-secondary400 text-lg font-semibold capitalize">
                           {item.name}
                         </FormLabel>
                       </FormItem>
@@ -81,8 +78,9 @@ export function TypeFilter() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
       </form>
     </Form>
   );
-}
+};
+
+export default TypeFilter;
