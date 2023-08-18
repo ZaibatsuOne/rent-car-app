@@ -1,12 +1,11 @@
 "use client";
-
 import AsideNavbar from "@/components/dashboard/AsideNavbar";
 import CarCard from "@/components/CarCard";
 import carService from "@/services/car.service";
+import CarsNotFound from "@/components/CarsNotFound";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import CarsNotFound from "@/components/CarsNotFound";
 
 const Dashboard = () => {
   const { data, isLoading } = useQuery(["cars"], () => carService.getAll(), {
@@ -14,6 +13,15 @@ const Dashboard = () => {
   });
 
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [selectedCapacity, setSelectedCapacity] = useState<number[]>([]);
+
+  const handleCapacityChange = (capacity: number) => {
+    if (selectedCapacity.includes(capacity)) {
+      setSelectedCapacity(selectedCapacity.filter((c) => c !== capacity));
+    } else {
+      setSelectedCapacity([...selectedCapacity, capacity]);
+    }
+  };
 
   const handleTypeChange = (type: string) => {
     if (selectedTypes.includes(type)) {
@@ -30,6 +38,12 @@ const Dashboard = () => {
 
     if (selectedTypes.length > 0) {
       filteredCars = data?.filter((car) => selectedTypes.includes(car.type));
+    }
+
+    if (selectedCapacity.length > 0) {
+      filteredCars = data?.filter((car) =>
+        selectedCapacity.includes(car.capacity)
+      );
     }
 
     if (filteredCars?.length === 0) {
@@ -53,6 +67,8 @@ const Dashboard = () => {
         <AsideNavbar
           onTypeChange={handleTypeChange}
           selectedTypes={selectedTypes}
+          handleCapacityChange={handleCapacityChange}
+          selectedCapacity={selectedCapacity}
         />
         {fetchCars()}
       </section>
