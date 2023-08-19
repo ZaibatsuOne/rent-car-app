@@ -1,35 +1,22 @@
 "use client";
-import AsideNavbar from "@/components/dashboard/AsideNavbar";
 import CarCard from "@/components/CarCard";
 import carService from "@/services/car.service";
 import CarsNotFound from "@/components/CarsNotFound";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useSelectedFilter } from "@/components/Providers/FilterProvider";
 
 const Dashboard = () => {
   const { data, isLoading } = useQuery(["cars"], () => carService.getAll(), {
     select: ({ data }) => data,
   });
 
-  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-  const [selectedCapacity, setSelectedCapacity] = useState<number[]>([]);
-
-  const handleCapacityChange = (capacity: number) => {
-    if (selectedCapacity.includes(capacity)) {
-      setSelectedCapacity(selectedCapacity.filter((c) => c !== capacity));
-    } else {
-      setSelectedCapacity([...selectedCapacity, capacity]);
-    }
-  };
-
-  const handleTypeChange = (type: string) => {
-    if (selectedTypes.includes(type)) {
-      setSelectedTypes(selectedTypes.filter((t) => t !== type));
-    } else {
-      setSelectedTypes([...selectedTypes, type]);
-    }
-  };
+  const {
+    selectedTypes,
+    selectedCapacity,
+    setSelectedCapacity,
+    setSelectedTypes,
+  } = useSelectedFilter();
 
   const fetchCars = () => {
     if (isLoading) return <div>Loading...</div>;
@@ -63,19 +50,7 @@ const Dashboard = () => {
     );
   };
 
-  return (
-    <main>
-      <section className="flex gap-4">
-        <AsideNavbar
-          onTypeChange={handleTypeChange}
-          selectedTypes={selectedTypes}
-          handleCapacityChange={handleCapacityChange}
-          selectedCapacity={selectedCapacity}
-        />
-        {fetchCars()}
-      </section>
-    </main>
-  );
+  return fetchCars();
 };
 
 export default Dashboard;

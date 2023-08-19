@@ -5,6 +5,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
 import ProviderClient from "@/components/Providers/Provider.client";
+import FilterProvider from "@/components/Providers/FilterProvider";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -24,9 +25,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("container max-w-[1348px]", jakarta.className)}>
         <ProviderClient>
-          <NavBar />
-          {children}
-          <Footer />
+          <FilterProvider>
+            <NavBar />
+            {children}
+            <Footer />
+          </FilterProvider>
         </ProviderClient>
       </body>
     </html>

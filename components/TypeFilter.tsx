@@ -60,7 +60,9 @@ const TypeFilter: FC<Props> = ({ selectedTypes, onTypeChange }) => {
                       >
                         <FormControl>
                           <Checkbox
-                            checked={selectedTypes.includes(item.name)}
+                            checked={
+                              selectedTypes && selectedTypes.includes(item.name)
+                            }
                             onCheckedChange={() =>
                               handleCheckboxChange(item.name)
                             }

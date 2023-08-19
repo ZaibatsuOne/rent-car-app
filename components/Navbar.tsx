@@ -12,23 +12,23 @@ const NavBar = () => {
     <header className="py-10">
       {isLargeScreen ? (
         <nav className="flex justify-between items-start lg:items-center">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start lg:items-center">
+          <span className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start lg:items-center">
             <Link href="/" className="text-primary500 font-bold text-[32px]">
               MORENT
             </Link>
-            <SearchBar />
-          </div>
-          <UserAccountNav />
+            {/* <SearchBar /> */}
+          </span>
+          {/* <UserAccountNav /> */}
         </nav>
       ) : (
         <nav className="flex flex-col gap-8">
-          <div className="flex justify-between">
+          <span className="flex justify-between">
             <Link href="/" className="text-primary500 font-bold text-[32px]">
               MORENT
             </Link>
-            <UserAccountNav />
-          </div>
-          <SearchBar />
+            {/* <UserAccountNav /> */}
+          </span>
+          {/* <SearchBar /> */}
         </nav>
       )}
     </header>

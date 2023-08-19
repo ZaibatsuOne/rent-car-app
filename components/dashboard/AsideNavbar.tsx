@@ -1,14 +1,13 @@
+import CapacityFilter from "../CapacityFilter";
 import TypeFilter from "../TypeFilter";
-import { Checkbox } from "../ui/checkbox";
 import { FC } from "react";
 import { Slider } from "../ui/slider";
-import CapacityFilter from "../CapacityFilter";
 
 interface Props {
-  selectedCapacity: number[];
-  selectedTypes: string[];
-  onTypeChange: (type: string) => void;
-  handleCapacityChange: (capacity: number) => void;
+  selectedCapacity?: number[];
+  selectedTypes?: string[];
+  onTypeChange?: (type: string) => void;
+  handleCapacityChange?: (capacity: number) => void;
 }
 
 const AsideNavbar: FC<Props> = ({
@@ -18,7 +17,7 @@ const AsideNavbar: FC<Props> = ({
   onTypeChange,
 }) => {
   return (
-    <aside className="flex flex-col gap-14 w-60">
+    <aside className="hidden md:flex flex-col gap-14 w-60">
       <TypeFilter selectedTypes={selectedTypes} onTypeChange={onTypeChange} />
       <CapacityFilter
         selectedCapacity={selectedCapacity}
