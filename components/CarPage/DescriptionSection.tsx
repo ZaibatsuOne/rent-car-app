@@ -21,7 +21,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
     },
     {
       title: "Steering",
-      value: priority,
+      value: "Manual",
     },
     {
       title: "Gasoline",
@@ -32,7 +32,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
   return (
     <section className="flex flex-col gap-7">
       <header className="flex justify-between items-start">
-        <div>
+        <div className="flex flex-col gap-2">
           <h3 className="font-bold text-3xl text-secondary500">{name}</h3>
           <div className="flex gap-2 items-center">
             <div className="flex gap-1">

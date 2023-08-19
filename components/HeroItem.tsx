@@ -22,7 +22,11 @@ const HeroItem: FC<Props> = ({ hero }) => {
           <p className="font-medium text-xs md:text-base">{subtitle}</p>
         </div>
         <div>
-          <Button size="lg" className={id === 1 ? "" : "bg-information500"}>
+          <Button
+            size="lg"
+            className={id === 1 ? "" : "bg-information500"}
+            href="/dashboard"
+          >
             Rental Car
           </Button>
         </div>
