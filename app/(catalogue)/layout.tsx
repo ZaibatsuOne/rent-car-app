@@ -30,7 +30,7 @@ const layout = ({ children }: Layout) => {
     }
   };
   return (
-    <main className="flex gap-4">
+    <main className="flex gap-20">
       <AsideNavbar
         handleCapacityChange={handleCapacityChange}
         selectedCapacity={selectedCapacity}

@@ -18,8 +18,10 @@ const CarPage = async ({ params: { id } }: Props) => {
   const car = await getCar(id);
   return (
     <main>
-      <ImageSection />
-      <DescriptionSection car={car} />
+      <section className="grid grid-cols-2 items-center">
+        <ImageSection car={car} />
+        <DescriptionSection car={car} />
+      </section>
     </main>
   );
 };

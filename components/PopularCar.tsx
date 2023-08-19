@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CarCard from "./CarCard";
 import SectionBar from "./SectionBar";
 import { cars } from "@/data/cars";
@@ -11,7 +12,9 @@ const PopularCar: FC = () => {
         {cars
           .filter((cars) => cars.priority === "popular")
           .map((car) => (
-            <CarCard car={car} key={car.image} />
+            <Link href={`/car/${car.id}`}>
+              <CarCard car={car} key={car.image} />
+            </Link>
           ))}
       </section>
     </section>

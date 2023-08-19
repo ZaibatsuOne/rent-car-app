@@ -2,6 +2,7 @@ import { FC } from "react";
 import SectionBar from "./SectionBar";
 import CarCard from "./CarCard";
 import { cars } from "@/data/cars";
+import Link from "next/link";
 const RecommendCars: FC = () => {
   return (
     <section className="flex flex-col gap-5">
@@ -10,7 +11,9 @@ const RecommendCars: FC = () => {
         {cars
           .filter((car) => car.priority === "recommended")
           .map((car) => (
-            <CarCard car={car} key={car.image} />
+            <Link href={`/car/${car.id}`}>
+              <CarCard car={car} key={car.image} />
+            </Link>
           ))}
       </section>
     </section>
