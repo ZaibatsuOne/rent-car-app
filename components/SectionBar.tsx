@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Button } from "./ui/button";
+import { Flex, Heading } from "@radix-ui/themes";
 
 interface Props {
   title: string;
@@ -7,14 +8,16 @@ interface Props {
 }
 const SectionBar: FC<Props> = ({ title, button }) => {
   return (
-    <div className="flex justify-between items-center px-5 py-2">
-      <h4 className="font-semibold text-secondary300">{title}</h4>
+    <Flex justify="between" align="center" px="5" py="2">
+      <Heading weight="bold" size="3" className="text-secondary300">
+        {title}
+      </Heading>
       {button ? (
         <Button variant="reversed" href="/dashboard">
           View All
         </Button>
       ) : null}
-    </div>
+    </Flex>
   );
 };
 

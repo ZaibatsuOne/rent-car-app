@@ -2,18 +2,19 @@ import PopularCar from "./PopularCar";
 import RecommendCars from "./RecommendCars";
 import { Button } from "./ui/button";
 import { FC } from "react";
+import { Flex } from "@radix-ui/themes";
 
 const Catalogue: FC = () => {
   return (
-    <section className="flex flex-col gap-8 pt-8 pb">
+    <Flex direction="column" gap="8" pt="8">
       <PopularCar />
       <RecommendCars />
-      <div className="flex items-center justify-center pt-24">
+      <Flex align="center" justify="center" pt="9">
         <Button size="lg" href="/dashboard">
           Show more car
         </Button>
-      </div>
-    </section>
+      </Flex>
+    </Flex>
   );
 };
 

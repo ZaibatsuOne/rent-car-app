@@ -1,19 +1,15 @@
+import { TextFieldInput, TextFieldRoot, TextFieldSlot } from "@radix-ui/themes";
 import { Search } from "lucide-react";
-import { FC, useState } from "react";
+import { FC } from "react";
 
 const SearchBar: FC = () => {
-  const [searchValue, setSearchValue] = useState<string>("");
-
   return (
-    <div className="flex px-5 py-2 rounded-[70px] gap-5 border border-primary100 text-secondary400">
-      <Search />
-      <input
-        onChange={(e) => setSearchValue(e.target.value)}
-        type="text"
-        placeholder="Search something here"
-        className="outline-none py-[2px] px-2 "
-      />
-    </div>
+    <TextFieldRoot radius="full" size="3" variant="surface">
+      <TextFieldSlot>
+        <Search />
+      </TextFieldSlot>
+      <TextFieldInput placeholder="Search something here" size="3" />
+    </TextFieldRoot>
   );
 };
 

@@ -1,7 +1,6 @@
 import DescriptionSection from "@/components/CarPage/DescriptionSection";
 import ImageSection from "@/components/CarPage/ImageSection";
 import Reviews from "@/components/Reviews";
-import AsideNavbar from "@/components/dashboard/AsideNavbar";
 import carService from "@/services/car.service";
 
 const getCar = async (id: number) => {

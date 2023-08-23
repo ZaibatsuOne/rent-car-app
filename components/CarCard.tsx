@@ -13,6 +13,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { ICar } from "@/types/types";
 import { useMediaQuery } from "react-responsive";
+import { Box, Flex, Text } from "@radix-ui/themes";
 
 interface Props {
   car: ICar;
@@ -35,67 +36,75 @@ const CarCard: FC<Props> = ({ car }) => {
     },
   ];
   return (
-    <Card>
+    <Card className="flex flex-col shadow-xl min-h-[403px]">
       <CardHeader>
         <CardTitle className="flex justify-between items-center">
-          <p className="capitalize">{car.name}</p>
+          <Text>{car.name}</Text>
           <Heart absoluteStrokeWidth />
         </CardTitle>
         <CardDescription>
-          <span className="font-bold text-secondary300 capitalize">
+          <Text className="font-bold text-secondary300 capitalize">
             {car.type}
-          </span>
+          </Text>
         </CardDescription>
       </CardHeader>
       {isLargeScreen ? (
-        <CardContent className="relative flex items-center justify-center py-10">
+        <CardContent className="relative flex items-center justify-center py-10 flex-grow">
           <Image src={car.image} width={220} height={68} alt="car" />
           <div className="absolute bg-gradient-to-t from-white w-[220px] h-5 bottom-10" />
         </CardContent>
       ) : (
-        <CardContent className="relative flex items-center justify-between py-10">
-          <div>
+        <CardContent className="relative flex items-center justify-between py-10 flex-grow">
+          <Box>
             <Image src={car.image} width={166} height={68} alt="car" />
             <div className="absolute bg-gradient-to-t from-white w-[150px] lg:w-[220px] h-5 bottom-10" />
-          </div>
+          </Box>
           <div className="flex flex-col gap-4 items-start text-[12px] text-secondary300">
             {carParams.map((param) => (
-              <div className="flex items-center gap-1">
+              <Flex align="start" gap="1">
                 <param.icon />
-                <span className="whitespace-nowrap">
+                <Text className="whitespace-nowrap">
                   {param.value} {param.subtitle}
-                </span>
-              </div>
+                </Text>
+              </Flex>
             ))}
           </div>
         </CardContent>
       )}
       {isLargeScreen ? (
-        <CardFooter className="flex flex-col gap-6">
+        <CardFooter className="flex flex-col gap-6 flex-grow-0">
           <div className="flex gap-4 items-center text-[12px] text-secondary300">
             {carParams.map((param) => (
-              <div className="flex items-center gap-1">
+              <Flex align="center" gap="1">
                 <param.icon />
-                <span className="whitespace-nowrap">
+                <Text className="whitespace-nowrap">
                   {param.value} {param.subtitle}
-                </span>
-              </div>
+                </Text>
+              </Flex>
             ))}
           </div>
-          <div className="flex gap-8 items-center">
-            <div>
-              <span className="font-bold text-xl">${car.price}.00/</span>
-              <span className="font-bold text-sm text-secondary300">day</span>
-            </div>
-            <Button>Rent Now</Button>
-          </div>
+          <Flex gap="8" align="center">
+            <Box>
+              <Text className="font-bold text-xl" as="span">
+                ${car.price}.00/ 
+              </Text>
+              <Text className="font-bold text-sm text-secondary300" as="span">
+                day
+              </Text>
+            </Box>
+            <Button className="px-2">Rent Now</Button>
+          </Flex>
         </CardFooter>
       ) : (
-        <CardFooter className="flex justify-between gap-6 ">
-          <div>
-            <span className="font-bold text-xl">${car.price}.00/</span>
-            <span className="font-bold text-sm text-secondary300">day</span>
-          </div>
+        <CardFooter className="flex justify-between gap-6 flex-grow-0">
+          <Box>
+            <Text className="font-bold text-xl" as="span">
+              ${car.price}.00/ 
+            </Text>
+            <Text className="font-bold text-sm text-secondary300" as="span">
+              day
+            </Text>
+          </Box>
           <Button>Rent Now</Button>
         </CardFooter>
       )}

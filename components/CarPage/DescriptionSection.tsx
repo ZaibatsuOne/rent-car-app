@@ -2,6 +2,7 @@ import { ICar } from "@/types/types";
 import { Heart, Star } from "lucide-react";
 import { FC } from "react";
 import { Button } from "../ui/button";
+import { Flex, Grid, Heading, Text } from "@radix-ui/themes";
 
 interface Props {
   car: ICar;
@@ -30,49 +31,65 @@ const DescriptionSection: FC<Props> = ({ car }) => {
     },
   ];
   return (
-    <section className="flex flex-col gap-7">
-      <header className="flex justify-between items-start">
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-3xl text-secondary500">{name}</h3>
-          <div className="flex gap-2 items-center">
-            <div className="flex gap-1">
+    <Flex direction="column" gap="7">
+      <Flex justify="between" align="start">
+        <Flex className="flex flex-col gap-2">
+          <Heading size="8" weight="bold" className="text-secondary500">
+            {name}
+          </Heading>
+          <Flex align="center" gap="2">
+            <Flex gap="1">
               <Star />
               <Star />
               <Star />
               <Star />
               <Star />
-            </div>
-            <span className="font-medium text-sm text-secondary400">
+            </Flex>
+            <Text
+              as="span"
+              weight="medium"
+              size="2"
+              className="text-secondary400"
+            >
               440+ Reviewer
-            </span>
-          </div>
-        </div>
+            </Text>
+          </Flex>
+        </Flex>
         <Heart className="mt-2" />
-      </header>
-      <p className="text-xl text-secondary400">
+      </Flex>
+      <Text size="5" className=" text-secondary400">
         NISMO has become the embodiment of Nissan's outstanding performance,
         inspired by the most unforgiving proving ground, the "race track".
-      </p>
-      <footer className="flex flex-col gap-16">
-        <div className="grid grid-cols-2 gap-4">
+      </Text>
+      <Flex direction="column" className="gap-16">
+        <Grid columns="2" gap="4">
           {footerCard.map((param) => (
-            <div className="flex justify-between text-xl">
-              <span className="text-secondary300">{param.title}</span>
-              <span className="capitalize font-semibold text-secondary400">
+            <Flex justify="between" className="text-xl">
+              <Text as="span" className="text-secondary300">
+                {param.title}
+              </Text>
+              <Text
+                as="span"
+                className="capitalize font-semibold text-secondary400"
+              >
                 {param.value} {param.subtitle}
-              </span>
-            </div>
+              </Text>
+            </Flex>
           ))}
-        </div>
-        <div className="flex justify-between items-center">
+        </Grid>
+        <Flex justify="between" align="center">
           <div className="font-bold">
-            <span className="text-[28px] text-secondary500">${price}.00/ </span>
-            <span className="text-secondary300">days</span>
+            <Text as="span" size="7" className="text-secondary500">
+              ${price}.00/ 
+            </Text>
+            <Text as="span" className="text-secondary300">
+              days
+            </Text>
           </div>
           <Button size="lg">Rent Now</Button>
-        </div>
-      </footer>
-    </section>
+        </Flex>
+      </Flex>
+    </Flex>
   );
 };
 

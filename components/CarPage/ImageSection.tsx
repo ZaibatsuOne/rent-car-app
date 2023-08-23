@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ICar } from "@/types/types";
 import { FC, useState } from "react";
+import { Flex } from "@radix-ui/themes";
 
 interface Props {
   car: ICar;
@@ -13,11 +14,11 @@ const ImageSection: FC<Props> = ({ car }) => {
   const photos = [1, 2, 3];
   const { image } = car;
   return (
-    <section className="flex flex-col gap-6">
-      <div className="flex w-[492px] h-[300px] rounded-xl bg-primary500 items-center justify-center bg-hero-pattern-two">
+    <Flex direction="column" gap="6">
+      <div className="flex w-[492px] h-[300px] rounded-xl bg-primary500 items-end justify-center bg-hero-pattern-two">
         <Image src={image} width={380} height={120} sizes="100vw" alt="car" />
       </div>
-      <div className="flex gap-6 items-center ">
+      <Flex gap="6" align="center">
         {photos.map((photo) => (
           <div
             className={`flex items-center justify-center bg-primary500 rounded-xl cursor-pointer ${
@@ -36,8 +37,8 @@ const ImageSection: FC<Props> = ({ car }) => {
             />
           </div>
         ))}
-      </div>
-    </section>
+      </Flex>
+    </Flex>
   );
 };
 
