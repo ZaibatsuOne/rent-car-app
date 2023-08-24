@@ -50,3 +50,8 @@ export interface PriceFilterState {
   selectedPrice: number;
   togglePrice: (price: number) => void;
 }
+
+export interface SearchState {
+  searchValue: string;
+  setSearchValue: (e) => void;
+}

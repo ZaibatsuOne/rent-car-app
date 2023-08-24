@@ -23,7 +23,7 @@ const PriceFilter: FC<Props> = () => {
         <Flex gap="2" align="center">
           <input
             type="range"
-            min={1}
+            min={70}
             max={100}
             step={1}
             onChange={handlePriceFilter}

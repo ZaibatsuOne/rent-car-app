@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import {
   useCapacityFilter,
   usePriceFilter,
+  useSearch,
   useTypeFilter,
 } from "@/utils/store";
 
@@ -18,6 +19,7 @@ const Dashboard = () => {
   const selectedTypes = useTypeFilter((state) => state.selectedTypes);
   const selectedCapacity = useCapacityFilter((state) => state.selectedCapacity);
   const selectedPrice = usePriceFilter((state) => state.selectedPrice);
+  const searchValue = useSearch((state) => state.searchValue);
 
   const fetchCars = () => {
     if (isLoading) return <div>Loading...</div>;
@@ -38,6 +40,12 @@ const Dashboard = () => {
 
     if (selectedPrice > 0) {
       filteredCars = filteredCars?.filter((car) => car.price <= selectedPrice);
+    }
+
+    if (filteredCars) {
+      filteredCars = filteredCars?.filter((car) =>
+        car.name.toLowerCase().includes(searchValue.toLowerCase())
+      );
     }
 
     if (filteredCars?.length === 0) {

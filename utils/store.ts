@@ -3,6 +3,7 @@ import {
   CarState,
   ICar,
   PriceFilterState,
+  SearchState,
   TypeFilterState,
 } from "@/types/types";
 import { create } from "zustand";
@@ -39,4 +40,10 @@ export const useCapacityFilter = create<CapacityFilterState>((set) => ({
 export const usePriceFilter = create<PriceFilterState>((set) => ({
   selectedPrice: 100,
   togglePrice: (price: number) => set((state) => ({ selectedPrice: price })),
+}));
+
+//Поиск по NavBar
+export const useSearch = create<SearchState>((set) => ({
+  searchValue: "",
+  setSearchValue: (value) => set({ searchValue: value }),
 }));
