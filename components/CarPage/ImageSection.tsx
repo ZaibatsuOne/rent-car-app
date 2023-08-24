@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { ICar } from "@/types/types";
 import { FC, useState } from "react";
@@ -10,30 +9,40 @@ interface Props {
 }
 
 const ImageSection: FC<Props> = ({ car }) => {
-  const [currentPhoto, setCurrentPhoto] = useState(1);
-  const photos = [1, 2, 3];
-  const { image } = car;
+  const [currentPhoto, setCurrentPhoto] = useState("1");
+  const [mainPhoto, setMainPhoto] = useState(car.photos[0]);
+
   return (
     <Flex direction="column" gap="6">
-      <div className="flex w-[492px] h-[300px] rounded-xl bg-primary500 items-end justify-center bg-hero-pattern-two">
-        <Image src={image} width={380} height={120} sizes="100vw" alt="car" />
+      <div className=" w-[492px] h-[300px] overflow-hidden rounded-xl bg-primary500 bg-hero-pattern-two">
+        <Image
+          width={1920}
+          height={1080}
+          src={mainPhoto}
+          alt="car"
+          quality={100}
+          className="object-cover h-full w-full"
+        />
       </div>
       <Flex gap="6" align="center">
-        {photos.map((photo) => (
+        {car.photos.map((photo) => (
           <div
-            className={`flex items-center justify-center bg-primary500 rounded-xl cursor-pointer ${
+            className={`flex items-center overflow-hidden justify-center bg-primary500 rounded-xl cursor-pointer ${
               currentPhoto === photo
-                ? "w-[132px] h-[108px] outline-4 outline-primary500 outline outline-offset-8"
+                ? "w-[132px] h-[108px] outline-primary500 outline outline-offset-8"
                 : "w-[148px] h-[124px]"
             }`}
-            onClick={() => setCurrentPhoto(photo)}
+            onClick={() => {
+              setCurrentPhoto(photo);
+              setMainPhoto(photo);
+            }}
           >
             <Image
-              src={image}
-              width={116}
-              height={36}
-              sizes="100vw"
+              width={1080}
+              height={720}
+              src={photo}
               alt="car"
+              className="w-full h-36 object-cover"
             />
           </div>
         ))}

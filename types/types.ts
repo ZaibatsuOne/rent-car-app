@@ -15,6 +15,8 @@ export interface ICar {
   image: string;
   priority: string;
   price: number;
+  description: string;
+  photos: string[];
 }
 
 export interface IFooterSubtitle {

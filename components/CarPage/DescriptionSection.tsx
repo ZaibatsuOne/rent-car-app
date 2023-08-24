@@ -9,7 +9,7 @@ interface Props {
 }
 
 const DescriptionSection: FC<Props> = ({ car }) => {
-  const { capacity, name, price, type, priority, gas } = car;
+  const { capacity, name, price, type, description, gas } = car;
   const footerCard = [
     {
       title: "Type Car",
@@ -58,8 +58,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
         <Heart className="mt-2" />
       </Flex>
       <Text size="5" className=" text-secondary400">
-        NISMO has become the embodiment of Nissan's outstanding performance,
-        inspired by the most unforgiving proving ground, the "race track".
+        {description}
       </Text>
       <Flex direction="column" className="gap-16">
         <Grid columns="2" gap="4">
