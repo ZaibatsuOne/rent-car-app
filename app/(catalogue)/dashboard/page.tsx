@@ -10,6 +10,7 @@ import {
   useSearch,
   useTypeFilter,
 } from "@/utils/store";
+import Loader from "@/components/Loader";
 
 const Dashboard = () => {
   const { data, isLoading } = useQuery(["cars"], () => carService.getAll(), {
@@ -22,7 +23,7 @@ const Dashboard = () => {
   const searchValue = useSearch((state) => state.searchValue);
 
   const fetchCars = () => {
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return <Loader />;
 
     let filteredCars = data;
 

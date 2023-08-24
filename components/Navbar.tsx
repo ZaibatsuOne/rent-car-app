@@ -1,15 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
 import SearchBar from "./SearchBar";
 import UserAccountNav from "./UserAccountNav";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 import { Flex, Heading } from "@radix-ui/themes";
-import { useRouter } from "next/navigation";
+import Loader from "./Loader";
 
 const NavBar = () => {
   const isLargeScreen = useMediaQuery({ minWidth: 1024 });
-  const router = useRouter();
 
   return (
     <header className="py-10">

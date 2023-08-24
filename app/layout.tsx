@@ -14,7 +14,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Morent - Rent Auto",
+  title: "MORENT - Rent Auto",
   description: "Rent car",
 };
 

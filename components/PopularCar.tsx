@@ -1,10 +1,14 @@
 import Link from "next/link";
 import CarCard from "./CarCard";
 import SectionBar from "./SectionBar";
-import { cars } from "@/data/cars";
 import { FC } from "react";
+import { ICar } from "@/types/types";
 
-const PopularCar: FC = () => {
+interface Props {
+  cars: ICar[];
+}
+
+const PopularCar: FC<Props> = ({ cars }) => {
   return (
     <section className="flex flex-col gap-5">
       <SectionBar title="Popular car" button={true} />
