@@ -2,6 +2,7 @@ import {
   CapacityFilterState,
   CarState,
   ICar,
+  PriceFilterState,
   TypeFilterState,
 } from "@/types/types";
 import { create } from "zustand";
@@ -32,4 +33,10 @@ export const useCapacityFilter = create<CapacityFilterState>((set) => ({
         ? state.selectedCapacity.filter((c) => c !== capacity)
         : [...state.selectedCapacity, capacity],
     })),
+}));
+
+//Фильтрация по цене
+export const usePriceFilter = create<PriceFilterState>((set) => ({
+  selectedPrice: 100,
+  togglePrice: (price: number) => set((state) => ({ selectedPrice: price })),
 }));

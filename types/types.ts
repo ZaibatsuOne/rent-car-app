@@ -45,3 +45,8 @@ export interface CapacityFilterState {
   selectedCapacity: number[];
   toggleCapacity: (capacity: number) => void;
 }
+
+export interface PriceFilterState {
+  selectedPrice: number;
+  togglePrice: (price: number) => void;
+}

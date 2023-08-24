@@ -4,9 +4,11 @@ import carService from "@/services/car.service";
 import CarsNotFound from "@/components/CarsNotFound";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import { useSelectedFilter } from "@/components/Providers/FilterProvider";
-import { useState } from "react";
-import { useCapacityFilter, useTypeFilter } from "@/utils/store";
+import {
+  useCapacityFilter,
+  usePriceFilter,
+  useTypeFilter,
+} from "@/utils/store";
 
 const Dashboard = () => {
   const { data, isLoading } = useQuery(["cars"], () => carService.getAll(), {
@@ -15,6 +17,7 @@ const Dashboard = () => {
 
   const selectedTypes = useTypeFilter((state) => state.selectedTypes);
   const selectedCapacity = useCapacityFilter((state) => state.selectedCapacity);
+  const selectedPrice = usePriceFilter((state) => state.selectedPrice);
 
   const fetchCars = () => {
     if (isLoading) return <div>Loading...</div>;
@@ -31,6 +34,10 @@ const Dashboard = () => {
       filteredCars = filteredCars?.filter((car) =>
         selectedCapacity.includes(car.capacity)
       );
+    }
+
+    if (selectedPrice > 0) {
+      filteredCars = filteredCars?.filter((car) => car.price <= selectedPrice);
     }
 
     if (filteredCars?.length === 0) {
