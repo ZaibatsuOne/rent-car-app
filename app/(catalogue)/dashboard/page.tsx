@@ -5,18 +5,16 @@ import CarsNotFound from "@/components/CarsNotFound";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { useSelectedFilter } from "@/components/Providers/FilterProvider";
+import { useState } from "react";
+import { useCapacityFilter, useTypeFilter } from "@/utils/store";
 
 const Dashboard = () => {
   const { data, isLoading } = useQuery(["cars"], () => carService.getAll(), {
     select: ({ data }) => data,
   });
 
-  const {
-    selectedTypes,
-    selectedCapacity,
-    setSelectedCapacity,
-    setSelectedTypes,
-  } = useSelectedFilter();
+  const selectedTypes = useTypeFilter((state) => state.selectedTypes);
+  const selectedCapacity = useCapacityFilter((state) => state.selectedCapacity);
 
   const fetchCars = () => {
     if (isLoading) return <div>Loading...</div>;

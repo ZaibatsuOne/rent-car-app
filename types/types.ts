@@ -29,3 +29,19 @@ export interface IFooter {
   title: string;
   subtitle: IFooterSubtitle[];
 }
+
+//ZUSTAND
+export interface CarState {
+  cars: ICar[];
+  addCar: (car: ICar) => void;
+}
+
+export interface TypeFilterState {
+  selectedTypes: string[];
+  toggleTypes: (types: string) => void;
+}
+
+export interface CapacityFilterState {
+  selectedCapacity: number[];
+  toggleCapacity: (capacity: number) => void;
+}

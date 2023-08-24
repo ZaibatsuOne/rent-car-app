@@ -14,26 +14,28 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { carType } from "@/data/data";
+import { useTypeFilter } from "@/utils/store";
 
 const FormSchema = z.object({
   items: z.array(z.string()).refine((value) => value.some((item) => item), {
     message: "You have to select at least one item.",
   }),
 });
-interface Props {
-  selectedTypes: string[];
-  onTypeChange: (type: string) => void;
-}
-const TypeFilter: FC<Props> = ({ selectedTypes, onTypeChange }) => {
+interface Props {}
+const TypeFilter: FC<Props> = () => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       items: ["recents", "home"],
     },
   });
+
+  const { selectedTypes, toggleTypes } = useTypeFilter();
+
   const handleCheckboxChange = (type: string) => {
-    onTypeChange(type);
+    toggleTypes(type);
   };
+
   return (
     <Form {...form}>
       <form className="space-y-8">

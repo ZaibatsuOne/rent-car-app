@@ -11,15 +11,10 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { useCapacityFilter } from "@/utils/store";
 
-interface Props {
-  selectedCapacity: number[];
-  handleCapacityChange: (capacity: number) => void;
-}
-const CapacityFilter: FC<Props> = ({
-  selectedCapacity,
-  handleCapacityChange,
-}) => {
+interface Props {}
+const CapacityFilter: FC<Props> = ({}) => {
   const form = useForm({
     defaultValues: {
       items: [2],
@@ -27,6 +22,9 @@ const CapacityFilter: FC<Props> = ({
   });
 
   const capacity = [2, 4, 6, 8];
+
+  const { selectedCapacity, toggleCapacity } = useCapacityFilter();
+
   return (
     <Form {...form}>
       <form className="space-y-8">
@@ -54,7 +52,7 @@ const CapacityFilter: FC<Props> = ({
                         <FormControl>
                           <Checkbox
                             checked={selectedCapacity.includes(item)}
-                            onCheckedChange={() => handleCapacityChange(item)}
+                            onCheckedChange={() => toggleCapacity(item)}
                           />
                         </FormControl>
                         <FormLabel className="text-secondary400 text-lg font-semibold capitalize">
