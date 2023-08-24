@@ -1,8 +1,9 @@
 import { ICar } from "@/types/types";
-import { Heart, Star } from "lucide-react";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Button } from "../ui/button";
 import { Flex, Grid, Heading, Text } from "@radix-ui/themes";
+import StarRating from "../StarRating";
+import AddFavorite from "../AddFavorite";
 
 interface Props {
   car: ICar;
@@ -38,13 +39,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
             {name}
           </Heading>
           <Flex align="center" gap="2">
-            <Flex gap="1">
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-            </Flex>
+            <StarRating car={car} />
             <Text
               as="span"
               weight="medium"
@@ -55,7 +50,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
             </Text>
           </Flex>
         </Flex>
-        <Heart className="mt-2" />
+        <AddFavorite car={car} />
       </Flex>
       <Text size="5" className=" text-secondary400">
         {description}

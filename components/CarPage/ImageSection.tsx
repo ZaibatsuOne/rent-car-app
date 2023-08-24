@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ImageSection: FC<Props> = ({ car }) => {
-  const [currentPhoto, setCurrentPhoto] = useState("1");
+  const [currentPhoto, setCurrentPhoto] = useState(1);
   const [mainPhoto, setMainPhoto] = useState(car.photos[0]);
 
   return (
@@ -25,15 +25,15 @@ const ImageSection: FC<Props> = ({ car }) => {
         />
       </div>
       <Flex gap="6" align="center">
-        {car.photos.map((photo) => (
+        {car.photos.map((photo, index) => (
           <div
             className={`flex items-center overflow-hidden justify-center bg-primary500 rounded-xl cursor-pointer ${
-              currentPhoto === photo
+              currentPhoto === index + 1
                 ? "w-[132px] h-[108px] outline-primary500 outline outline-offset-8"
                 : "w-[148px] h-[124px]"
             }`}
             onClick={() => {
-              setCurrentPhoto(photo);
+              setCurrentPhoto(index + 1);
               setMainPhoto(photo);
             }}
           >

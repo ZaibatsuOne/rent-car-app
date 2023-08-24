@@ -1,7 +1,10 @@
 import DescriptionSection from "@/components/CarPage/DescriptionSection";
 import ImageSection from "@/components/CarPage/ImageSection";
+import RecommendCars from "@/components/RecommendCars";
 import Reviews from "@/components/Reviews";
 import carService from "@/services/car.service";
+import { Flex } from "@radix-ui/themes";
+import { Metadata } from "next";
 
 const getCar = async (id: number) => {
   const data = await carService.getById(id);
@@ -9,10 +12,16 @@ const getCar = async (id: number) => {
 };
 
 interface Props {
-  params: {
-    id: number;
-  };
+  params: { id: number };
 }
+
+export const generateMetadata = async (props: Props): Promise<Metadata> => {
+  const { params } = props;
+  const car = await getCar(params.id);
+  return {
+    title: "MORENT - " + car.name,
+  };
+};
 
 const CarPage = async ({ params: { id } }: Props) => {
   const car = await getCar(id);
@@ -22,7 +31,10 @@ const CarPage = async ({ params: { id } }: Props) => {
         <ImageSection car={car} />
         <DescriptionSection car={car} />
       </section>
-      <Reviews />
+      <Flex direction="column" className="gap-16">
+        <Reviews />
+        <RecommendCars columns="3" count={7} />
+      </Flex>
     </main>
   );
 };

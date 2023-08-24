@@ -3,18 +3,21 @@ import { reviews } from "@/data/data";
 import { Button } from "./ui/button";
 import { Star } from "lucide-react";
 import Image from "next/image";
+import { Flex, Heading, Text } from "@radix-ui/themes";
 const Reviews: FC = () => {
   return (
-    <section className="flex flex-col gap-8">
-      <header className="flex gap-3 items-center">
-        <h3 className="font-semibold text-xl text-secondary500">Reviews</h3>
+    <Flex direction="column" gap="7">
+      <Flex gap="3" align="center">
+        <Heading weight="bold" className="text-secondary500">
+          Reviews
+        </Heading>
         <Button size="sm">{reviews.length}</Button>
-      </header>
-      <div className="flex flex-col gap-6">
+      </Flex>
+      <Flex direction="column" gap="5">
         {reviews.map((review) => (
-          <article className="flex flex-col gap-[22px]">
-            <header className="flex justify-between">
-              <div className="flex gap-4">
+          <Flex direction="column" gap="5">
+            <Flex justify="between">
+              <Flex gap="3">
                 <Image
                   className="rounded-full"
                   src={review.avatar}
@@ -22,33 +25,31 @@ const Reviews: FC = () => {
                   height={56}
                   alt={review.name}
                 />
-                <div className="flex flex-col gap-2">
-                  <p className="text-xl font-bold text-secondary500">
+                <Flex direction="column" gap="1">
+                  <Text weight="bold" size="4" className="text-secondary500">
                     {review.name}
-                  </p>
-                  <p className="text-sm font-medium text-secondary300">
+                  </Text>
+                  <Text weight="medium" className="text-secondary300">
                     {review.role}
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <span>{review.date}</span>
-                <div className="flex gap-1">
+                  </Text>
+                </Flex>
+              </Flex>
+              <Flex direction="column" gap="1">
+                <Text as="span">{review.date}</Text>
+                <Flex gap="1">
+                  <Star fill="#currentColor" />
+                  <Star fill="#currentColor" />
+                  <Star fill="#currentColor" />
+                  <Star fill="#currentColor" />
                   <Star />
-                  <Star />
-                  <Star />
-                  <Star />
-                  <Star />
-                </div>
-              </div>
-            </header>
-            <div className="text-sm text-secondary400 pl-[72px]">
-              {review.review}
-            </div>
-          </article>
+                </Flex>
+              </Flex>
+            </Flex>
+            <Text className="text-secondary400 pl-[72px]">{review.review}</Text>
+          </Flex>
         ))}
-      </div>
-    </section>
+      </Flex>
+    </Flex>
   );
 };
 

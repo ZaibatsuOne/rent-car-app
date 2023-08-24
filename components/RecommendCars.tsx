@@ -5,12 +5,19 @@ import { cars } from "@/data/cars";
 import { FC } from "react";
 import { Grid } from "@radix-ui/themes";
 
-const RecommendCars: FC = () => {
+interface Props {
+  columns?: string;
+  count?: number;
+}
+
+const RecommendCars: FC<Props> = ({ columns = "4", count }) => {
+  count === cars.length;
   return (
     <section className="flex flex-col gap-5">
       <SectionBar title="Recomendation Car" button={false} />
-      <Grid columns="4" gap="8" className="lg:grid-cols-2">
+      <Grid columns={columns} gap="8" className="lg:grid-cols-2">
         {cars
+          .slice(0, count)
           .filter((car) => car.priority === "recommended")
           .map((car) => (
             <Link href={`/car/${car.id}`}>
