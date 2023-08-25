@@ -10,7 +10,7 @@ import {
   useSearch,
   useTypeFilter,
 } from "@/utils/store";
-import Loader from "@/components/Loader";
+import Loader from "@/components/ui/Loader";
 
 const Dashboard = () => {
   const { data, isLoading } = useQuery(["cars"], () => carService.getAll(), {

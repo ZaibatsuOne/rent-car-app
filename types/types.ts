@@ -69,7 +69,8 @@ export interface OpenFormState {
   setOpenForm: () => void;
 }
 
-export interface FeedbackState {
-  feedbackList: IReview[];
-  addFeedback: (feedback: IReview) => void;
+export interface FavoriteState {
+  favoriteList: ICar[];
+  addInFavorite: (car: ICar) => void;
+  removeFromFavorite: (car: ICar) => void;
 }

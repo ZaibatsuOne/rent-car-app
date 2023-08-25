@@ -1,10 +1,8 @@
-import { reviews } from "@/data/data";
 import {
   CapacityFilterState,
   CarState,
-  FeedbackState,
+  FavoriteState,
   ICar,
-  IReview,
   OpenFormState,
   PriceFilterState,
   SearchState,
@@ -52,13 +50,19 @@ export const useSearch = create<SearchState>((set) => ({
   setSearchValue: (value) => set({ searchValue: value }),
 }));
 
+//Открытие формы для отзыва
 export const useLeaveFeedback = create<OpenFormState>((set) => ({
   openForm: false,
   setOpenForm: () => set((state) => ({ openForm: !state.openForm })),
 }));
 
-export const useAddFeedback = create<FeedbackState>((set) => ({
-  feedbackList: reviews,
-  addFeedback: (feedback: IReview) =>
-    set((state) => ({ feedbackList: [...state.feedbackList, feedback] })),
+//Добавление в избранное
+export const useAddFavorite = create<FavoriteState>((set) => ({
+  favoriteList: [],
+  addInFavorite: (car: ICar) =>
+    set((state) => ({ favoriteList: [...state.favoriteList, car] })),
+  removeFromFavorite: () =>
+    set((state) => ({
+      favoriteList: state.favoriteList.filter((car) => car !== car.id),
+    })),
 }));

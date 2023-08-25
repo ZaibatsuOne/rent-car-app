@@ -1,8 +1,9 @@
 "use client";
 import { FC, useEffect, useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "./button";
 import { useCookies } from "react-cookie";
 import { ICar } from "@/types/types";
+import { useAddFavorite } from "@/utils/store";
 
 interface Props {
   car: ICar;
@@ -26,8 +27,19 @@ const AddFavorite: FC<Props> = ({ car }) => {
     setCookie(cookie_key, liked.toString());
   }, [liked, cookie]);
 
+  const { addInFavorite, removeFromFavorite } = useAddFavorite();
+
+  const handleFavorite = (car: ICar) => {
+    setLiked(!liked);
+    if (liked === false) {
+      addInFavorite(car);
+    } else {
+      removeFromFavorite(car);
+    }
+  };
+
   return (
-    <Button variant="ghost" onClick={(): void => setLiked(!liked)}>
+    <Button variant="ghost" onClick={(): void => handleFavorite(car)}>
       <svg
         width="25"
         height="25"

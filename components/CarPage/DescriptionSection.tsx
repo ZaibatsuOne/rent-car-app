@@ -3,9 +3,9 @@ import { ICar } from "@/types/types";
 import { FC, useState } from "react";
 import { Button } from "../ui/button";
 import { Flex, Grid, Heading, Text } from "@radix-ui/themes";
-import StarRating from "../StarRating";
-import AddFavorite from "../AddFavorite";
-import { useFavoriteCars } from "@/utils/store";
+import StarRating from "../ui/StarRating";
+import AddFavorite from "../ui/AddFavorite";
+import { useAddFavorite } from "@/utils/store";
 
 interface Props {
   car: ICar;
@@ -34,8 +34,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
     },
   ];
 
-  const addCarInFavorite = useFavoriteCars((state) => state.addCar);
-  const zusCars = useFavoriteCars((state) => state.cars);
+  const favoriteList = useAddFavorite((state) => state.favoriteList);
   return (
     <Flex direction="column" gap="7">
       <Flex justify="between" align="start">
@@ -61,7 +60,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
         {description}
       </Text>
       <div>
-        {zusCars.map((item) => (
+        {favoriteList.map((item) => (
           <span>{item.name}</span>
         ))}
       </div>
@@ -90,9 +89,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
               days
             </Text>
           </div>
-          <Button size="lg" onClick={() => addCarInFavorite(car)}>
-            Rent Now
-          </Button>
+          <Button size="lg">Rent Now</Button>
         </Flex>
       </Flex>
     </Flex>

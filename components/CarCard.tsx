@@ -14,7 +14,7 @@ import { Button } from "./ui/button";
 import { ICar } from "@/types/types";
 import { useMediaQuery } from "react-responsive";
 import { Box, Flex, Text } from "@radix-ui/themes";
-import AddFavorite from "./AddFavorite";
+import AddFavorite from "./ui/AddFavorite";
 
 interface Props {
   car: ICar;
