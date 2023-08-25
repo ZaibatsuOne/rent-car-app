@@ -1,5 +1,7 @@
 "use client";
 
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import CustomInput from "@/components/Form/CustomInput";
 import CustomTextarea from "@/components/Form/CustomTextarea";
 import reviewService from "@/services/review.service";
@@ -8,11 +10,7 @@ import { Flex } from "@radix-ui/themes";
 import { Button } from "../ui/button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FC } from "react";
-import {
-  QueryClient,
-  useMutation,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 interface FormValues {
   role: string;
@@ -24,8 +22,16 @@ interface Props {
   avatar: string | null | undefined;
 }
 const ReviewForm: FC<Props> = ({ name, avatar }) => {
+  const formSchema = yup.object({
+    role: yup.string(),
+    review: yup.string().required(),
+  });
+
+  const { register, handleSubmit } = useForm({
+    resolver: yupResolver(formSchema),
+  });
+
   const { openForm, setOpenForm } = useLeaveFeedback();
-  const { register, handleSubmit } = useForm();
   const currentDate = Math.floor(Date.now() / 1000);
 
   const queryClient = useQueryClient();

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Flex, Text } from "@radix-ui/themes";
 import { IReview } from "@/types/types";
 import { Star } from "lucide-react";
