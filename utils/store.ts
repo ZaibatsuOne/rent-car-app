@@ -47,3 +47,8 @@ export const useSearch = create<SearchState>((set) => ({
   searchValue: "",
   setSearchValue: (value) => set({ searchValue: value }),
 }));
+
+export const useLeaveFeedback = create((set) => ({
+  openForm: false,
+  setOpenForm: () => set({ openForm: true }),
+}));

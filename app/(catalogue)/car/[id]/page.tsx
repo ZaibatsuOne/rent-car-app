@@ -32,7 +32,7 @@ const CarPage = async ({ params: { id } }: Props) => {
   const oneCar = await getOneCar(id);
   const allCars = await getAllCar();
   return (
-    <main className="flex flex-col gap-8">
+    <main className="flex flex-col gap-20">
       <section className="grid grid-cols-2 items-center">
         <ImageSection car={oneCar} />
         <DescriptionSection car={oneCar} />

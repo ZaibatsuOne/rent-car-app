@@ -8,6 +8,7 @@ import { Theme } from "@radix-ui/themes";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import type { Metadata } from "next";
+import SessProvider from "@/components/Providers/SessProvider";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -25,14 +26,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn("container max-w-[1348px]", jakarta.className)}>
+      <body className={cn("container", jakarta.className)}>
         <ProviderClient>
           <CookieProvider>
             <Theme>
-              {" "}
-              <NavBar />
-              {children}
-              <Footer />
+              <SessProvider>
+                <NavBar />
+                {children}
+                <Footer />
+              </SessProvider>
             </Theme>
           </CookieProvider>
         </ProviderClient>

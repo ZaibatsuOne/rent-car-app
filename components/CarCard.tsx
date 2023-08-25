@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { Fuel, Heart, LifeBuoy, Users } from "lucide-react";
+import { Fuel, LifeBuoy, Users } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { ICar } from "@/types/types";
@@ -62,7 +62,7 @@ const CarCard: FC<Props> = ({ car }) => {
           </Box>
           <div className="flex flex-col gap-4 items-start text-[12px] text-secondary300">
             {carParams.map((param) => (
-              <Flex align="start" gap="1">
+              <Flex align="start" gap="1" key={param.subtitle}>
                 <param.icon />
                 <Text className="whitespace-nowrap">
                   {param.value} {param.subtitle}
@@ -76,7 +76,7 @@ const CarCard: FC<Props> = ({ car }) => {
         <CardFooter className="flex flex-col gap-6 flex-grow-0">
           <div className="flex gap-4 items-center text-[12px] text-secondary300">
             {carParams.map((param) => (
-              <Flex align="center" gap="1">
+              <Flex align="center" gap="1" key={param.value}>
                 <param.icon />
                 <Text className="whitespace-nowrap">
                   {param.value} {param.subtitle}

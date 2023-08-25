@@ -1,54 +1,32 @@
-import { FC } from "react";
-import { reviews } from "@/data/data";
+import ReviewForm from "./Form/ReviewForm";
+import ReviewItem from "./ReviewItem";
+import { authOptions } from "@/services/auth.service";
 import { Button } from "./ui/button";
-import { Star } from "lucide-react";
-import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 import { Flex, Heading, Text } from "@radix-ui/themes";
-const Reviews: FC = () => {
+import { getServerSession } from "next-auth";
+import { reviews } from "@/data/data";
+
+const Reviews = () => {
   return (
     <Flex direction="column" gap="7">
-      <Flex gap="3" align="center">
-        <Heading weight="bold" className="text-secondary500">
-          Reviews
-        </Heading>
-        <Button size="sm">{reviews.length}</Button>
+      <Flex justify="between" align="center">
+        <Flex gap="3" align="center">
+          <Heading weight="bold" className="text-secondary500">
+            Reviews
+          </Heading>
+          <Button size="sm">{reviews.length}</Button>
+        </Flex>
       </Flex>
       <Flex direction="column" gap="5">
-        {reviews.map((review) => (
-          <Flex direction="column" gap="5">
-            <Flex justify="between">
-              <Flex gap="3">
-                <Image
-                  className="rounded-full"
-                  src={review.avatar}
-                  width={56}
-                  height={56}
-                  alt={review.name}
-                />
-                <Flex direction="column" gap="1">
-                  <Text weight="bold" size="4" className="text-secondary500">
-                    {review.name}
-                  </Text>
-                  <Text weight="medium" className="text-secondary300">
-                    {review.role}
-                  </Text>
-                </Flex>
-              </Flex>
-              <Flex direction="column" gap="1">
-                <Text as="span">{review.date}</Text>
-                <Flex gap="1">
-                  <Star fill="#currentColor" />
-                  <Star fill="#currentColor" />
-                  <Star fill="#currentColor" />
-                  <Star fill="#currentColor" />
-                  <Star />
-                </Flex>
-              </Flex>
-            </Flex>
-            <Text className="text-secondary400 pl-[72px]">{review.review}</Text>
-          </Flex>
+        {reviews.slice(0, 2).map((review) => (
+          <ReviewItem review={review} />
         ))}
       </Flex>
+      <Button variant="ghost" className="text-secondary300">
+        <Text>Show All</Text>
+        <ChevronDown />
+      </Button>
     </Flex>
   );
 };

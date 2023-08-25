@@ -30,6 +30,14 @@ export interface IFooter {
   subtitle: IFooterSubtitle[];
 }
 
+export interface IReview {
+  name: string;
+  role: string;
+  date: string;
+  avatar: string;
+  review: string;
+}
+
 //ZUSTAND
 export interface CarState {
   cars: ICar[];
