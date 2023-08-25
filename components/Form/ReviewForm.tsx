@@ -1,20 +1,24 @@
 "use client";
 
 import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 import CustomInput from "@/components/Form/CustomInput";
 import CustomTextarea from "@/components/Form/CustomTextarea";
 import reviewService from "@/services/review.service";
-import { useLeaveFeedback } from "@/utils/store";
-import { Flex } from "@radix-ui/themes";
 import { Button } from "../ui/button";
-import { useForm, SubmitHandler } from "react-hook-form";
 import { FC } from "react";
+import { Flex } from "@radix-ui/themes";
+import { IReview } from "@/types/types";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useLeaveFeedback } from "@/utils/store";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 interface FormValues {
-  role: string;
+  role: string | undefined;
   review: string;
+  date?: number;
+  name?: string;
+  avatar?: string;
 }
 
 interface Props {
@@ -39,7 +43,7 @@ const ReviewForm: FC<Props> = ({ name, avatar }) => {
   //Отправка на сервер
   const { mutate } = useMutation(
     ["create review"],
-    (review) => reviewService.create(review),
+    (review: IReview) => reviewService.create(review),
     {
       onSuccess() {
         setOpenForm();
@@ -51,14 +55,14 @@ const ReviewForm: FC<Props> = ({ name, avatar }) => {
   //Получение данных формы
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const review = {
-      role: data.role,
+      role: data.role || "",
       review: data.review,
       date: currentDate,
-      name: name,
-      avatar: avatar,
+      name: name || "",
+      avatar: avatar || "",
     };
 
-    mutate(review);
+    await mutate(review);
   };
 
   return (

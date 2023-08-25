@@ -33,7 +33,7 @@ export interface IFooter {
 export interface IReview {
   name: string;
   role: string;
-  date: string;
+  date: number;
   avatar: string;
   review: string;
 }
@@ -61,7 +61,7 @@ export interface PriceFilterState {
 
 export interface SearchState {
   searchValue: string;
-  setSearchValue: (e) => void;
+  setSearchValue: (e: any) => void;
 }
 
 export interface OpenFormState {
