@@ -1,13 +1,13 @@
 "use client";
 
 import { useLeaveFeedback } from "@/utils/store";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 const LeaveFeedback = () => {
-  const setOpenForm = useLeaveFeedback((state) => state.setOpenForm);
+  const { openForm, setOpenForm } = useLeaveFeedback();
   return (
     <Button size="md" variant="minimal" onClick={setOpenForm}>
-      Leave feedback
+      {openForm ? "Close Form" : "Leave Feedback"}
     </Button>
   );
 };

@@ -1,7 +1,7 @@
 import DescriptionSection from "@/components/CarPage/DescriptionSection";
 import ImageSection from "@/components/CarPage/ImageSection";
 import RecommendCars from "@/components/RecommendCars";
-import Reviews from "@/components/Reviews";
+import Reviews from "@/components/Reviews/Reviews";
 import carService from "@/services/car.service";
 import { Flex } from "@radix-ui/themes";
 import { Metadata } from "next";

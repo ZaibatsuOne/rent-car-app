@@ -63,3 +63,13 @@ export interface SearchState {
   searchValue: string;
   setSearchValue: (e) => void;
 }
+
+export interface OpenFormState {
+  openForm: boolean;
+  setOpenForm: () => void;
+}
+
+export interface FeedbackState {
+  feedbackList: IReview[];
+  addFeedback: (feedback: IReview) => void;
+}

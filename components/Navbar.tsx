@@ -22,7 +22,6 @@ const NavBar = () => {
         </Flex>
         <SearchBar />
         <UserAccountNav />
-        <ReviewForm />
       </nav>
     </header>
   );

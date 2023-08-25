@@ -1,7 +1,11 @@
+import { reviews } from "@/data/data";
 import {
   CapacityFilterState,
   CarState,
+  FeedbackState,
   ICar,
+  IReview,
+  OpenFormState,
   PriceFilterState,
   SearchState,
   TypeFilterState,
@@ -48,7 +52,13 @@ export const useSearch = create<SearchState>((set) => ({
   setSearchValue: (value) => set({ searchValue: value }),
 }));
 
-export const useLeaveFeedback = create((set) => ({
+export const useLeaveFeedback = create<OpenFormState>((set) => ({
   openForm: false,
-  setOpenForm: () => set({ openForm: true }),
+  setOpenForm: () => set((state) => ({ openForm: !state.openForm })),
+}));
+
+export const useAddFeedback = create<FeedbackState>((set) => ({
+  feedbackList: reviews,
+  addFeedback: (feedback: IReview) =>
+    set((state) => ({ feedbackList: [...state.feedbackList, feedback] })),
 }));
