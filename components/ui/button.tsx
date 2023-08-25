@@ -45,11 +45,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button";
     if (href) {
       return (
-        <Link
-          href={href}
-          className={cn(buttonVariants({ variant, size, className }))}
-          {...props}
-        />
+        <Link href={href}>
+          <Comp
+            className={cn(buttonVariants({ variant, size, className }))}
+            ref={ref}
+            {...props}
+          />
+        </Link>
       );
     }
     return (

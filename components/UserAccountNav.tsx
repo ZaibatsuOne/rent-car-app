@@ -1,8 +1,8 @@
+import Link from "next/link";
 import { authOptions } from "@/services/auth.service";
 import { Bell, Heart, LogOut, LogIn } from "lucide-react";
 import { Flex, Text } from "@radix-ui/themes";
 import { getServerSession } from "next-auth";
-import Link from "next/link";
 
 const UserAccountNav = async () => {
   const session = await getServerSession(authOptions);

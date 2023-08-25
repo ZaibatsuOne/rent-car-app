@@ -14,14 +14,17 @@ const ReviewList: FC = () => {
     select: ({ data }) => data,
   });
 
+  const reviews = data ?? [];
+
   return (
     <>
       <Flex direction="column" gap="5">
-        {data?.slice(0, reviewsCount).map((review) => (
+        {reviews.slice(0, reviewsCount).map((review) => (
           <ReviewItem review={review} />
         ))}
       </Flex>
-      {data?.length === reviewsCount || data?.length + 1 === reviewsCount ? (
+      {reviews.length === reviewsCount ||
+      reviews.length + 1 === reviewsCount ? (
         <Button
           variant="ghost"
           className="text-secondary300"

@@ -1,6 +1,5 @@
 "use client";
 
-import * as yup from "yup";
 import CustomInput from "@/components/Form/CustomInput";
 import CustomTextarea from "@/components/Form/CustomTextarea";
 import reviewService from "@/services/review.service";
@@ -12,6 +11,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useLeaveFeedback } from "@/utils/store";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { reviewSchema } from "@/types/validate";
 
 interface FormValues {
   role: string | undefined;
@@ -26,13 +26,8 @@ interface Props {
   avatar: string | null | undefined;
 }
 const ReviewForm: FC<Props> = ({ name, avatar }) => {
-  const formSchema = yup.object({
-    role: yup.string(),
-    review: yup.string().required(),
-  });
-
   const { register, handleSubmit } = useForm({
-    resolver: yupResolver(formSchema),
+    resolver: yupResolver(reviewSchema),
   });
 
   const { openForm, setOpenForm } = useLeaveFeedback();
@@ -62,7 +57,7 @@ const ReviewForm: FC<Props> = ({ name, avatar }) => {
       avatar: avatar || "",
     };
 
-    await mutate(review);
+    mutate(review);
   };
 
   return (
