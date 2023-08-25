@@ -8,6 +8,11 @@ import { Flex } from "@radix-ui/themes";
 import { Button } from "../ui/button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FC } from "react";
+import {
+  QueryClient,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 
 interface FormValues {
   role: string;
@@ -15,15 +20,30 @@ interface FormValues {
 }
 
 interface Props {
-  name: string;
-  avatar: string;
+  name: string | null | undefined;
+  avatar: string | null | undefined;
 }
 const ReviewForm: FC<Props> = ({ name, avatar }) => {
-  const openForm = useLeaveFeedback((state) => state.openForm);
+  const { openForm, setOpenForm } = useLeaveFeedback();
   const { register, handleSubmit } = useForm();
   const currentDate = Math.floor(Date.now() / 1000);
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const queryClient = useQueryClient();
+
+  //Отправка на сервер
+  const { mutate } = useMutation(
+    ["create review"],
+    (review) => reviewService.create(review),
+    {
+      onSuccess() {
+        setOpenForm();
+        queryClient.invalidateQueries(["reviews"]);
+      },
+    }
+  );
+
+  //Получение данных формы
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const review = {
       role: data.role,
       review: data.review,
@@ -31,7 +51,8 @@ const ReviewForm: FC<Props> = ({ name, avatar }) => {
       name: name,
       avatar: avatar,
     };
-    reviewService.postReview(review);
+
+    mutate(review);
   };
 
   return (

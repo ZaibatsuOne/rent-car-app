@@ -1,14 +1,20 @@
 import LeaveFeedback from "./LeaveFeedback";
 import ReviewForm from "../Form/ReviewForm";
 import ReviewList from "./ReviewList";
+import reviewService from "@/services/review.service";
+import { authOptions } from "@/services/auth.service";
 import { Button } from "../ui/button";
 import { Flex, Heading } from "@radix-ui/themes";
-import { reviews } from "@/data/data";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/services/auth.service";
+
+const getReviews = async () => {
+  const response = await reviewService.getAll();
+  return response.data;
+};
 
 const Reviews = async () => {
   const session = await getServerSession(authOptions);
+  const reviews = await getReviews();
 
   return (
     <Flex direction="column" gap="7">
@@ -19,7 +25,7 @@ const Reviews = async () => {
           </Heading>
           <Button size="sm">{reviews.length}</Button>
         </Flex>
-        <LeaveFeedback />
+        <LeaveFeedback userData={session?.user?.name} />
       </Flex>
       <ReviewForm name={session?.user?.name} avatar={session?.user?.image} />
       <ReviewList />

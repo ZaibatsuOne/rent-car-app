@@ -1,8 +1,6 @@
 "use client";
 
-import * as z from "zod";
 import { FC } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -16,19 +14,9 @@ import {
 import { carType } from "@/data/data";
 import { useTypeFilter } from "@/utils/store";
 
-const FormSchema = z.object({
-  items: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one item.",
-  }),
-});
 interface Props {}
 const TypeFilter: FC<Props> = () => {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: {
-      items: ["recents", "home"],
-    },
-  });
+  const form = useForm();
 
   const { selectedTypes, toggleTypes } = useTypeFilter();
 

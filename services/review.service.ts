@@ -7,8 +7,8 @@ class ReviewService {
       "https://6454dae6a74f994b334ad4fb.mockapi.io/carReview"
     );
   }
-  async postReview(review: IReview) {
-    return axios.post(
+  async create(review: IReview) {
+    return axios.post<IReview>(
       "https://6454dae6a74f994b334ad4fb.mockapi.io/carReview",
       review
     );

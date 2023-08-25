@@ -40,7 +40,11 @@ const ReviewItem = ({ review }: Props) => {
             className="rounded-full w-14 h-14"
             alt="User Avatar"
           />
-          <Flex direction="column" gap="1">
+          <Flex
+            direction="column"
+            gap="1"
+            className="text-ellipsis overflow-hidden max-w-4xl "
+          >
             <Text weight="bold" size="4" className="text-secondary500">
               {review.name}
             </Text>
@@ -62,7 +66,9 @@ const ReviewItem = ({ review }: Props) => {
           </Flex>
         </Flex>
       </Flex>
-      <Text className="text-secondary400 pl-[72px]">{review.review}</Text>
+      <div className="text-ellipsis overflow-hidden max-w-5xl">
+        <Text className="text-secondary400 pl-[72px] ">{review.review}</Text>
+      </div>
     </Flex>
   );
 };
