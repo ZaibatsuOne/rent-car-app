@@ -10,7 +10,7 @@ const getCars = async () => {
 export default async function Home() {
   const cars = await getCars();
   return (
-    <main>
+    <main className="container pt-10 pb-10">
       <HeroSection />
       <Catalogue cars={cars} />
     </main>

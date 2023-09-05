@@ -7,11 +7,13 @@ interface Props {}
 
 const AsideNavbar: FC<Props> = () => {
   return (
-    <aside className="hidden md:flex flex-col gap-14 w-60">
-      <TypeFilter />
-      <CapacityFilter />
-      <PriceFilter />
-    </aside>
+    <div className="bg-white">
+      <aside className="container hidden md:flex flex-col gap-14 w-60 py-10">
+        <TypeFilter />
+        <CapacityFilter />
+        <PriceFilter />
+      </aside>
+    </div>
   );
 };
 

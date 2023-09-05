@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn("container", jakarta.className)}>
+      <body className={cn("bg-[#F6F7F9]", jakarta.className)}>
         <Providers>
           <NavBar />
           {children}

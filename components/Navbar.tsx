@@ -2,11 +2,12 @@ import SearchBar from "./SearchBar";
 import UserAccountNav from "./UserAccountNav";
 import Link from "next/link";
 import { Flex, Heading } from "@radix-ui/themes";
+import { Separator } from "./ui/separator";
 
 const NavBar = () => {
   return (
-    <header className="py-10">
-      <nav className="flex justify-between items-start lg:items-center">
+    <header className="bg-white">
+      <nav className="container py-10 flex justify-between items-start lg:items-center">
         <Flex
           direction="column"
           gap="8"
@@ -22,6 +23,7 @@ const NavBar = () => {
         <SearchBar />
         <UserAccountNav />
       </nav>
+      <Separator />
     </header>
   );
 };

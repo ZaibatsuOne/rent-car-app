@@ -36,7 +36,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
 
   // const favoriteList = useAddFavorite((state) => state.favoriteList);
   return (
-    <Flex direction="column" gap="7">
+    <Flex direction="column" gap="7" className="bg-white p-6">
       <Flex justify="between" align="start">
         <Flex className="flex flex-col gap-2">
           <Heading size="8" weight="bold" className="text-secondary500">

@@ -6,7 +6,7 @@ interface Layout {
 }
 const layout = ({ children }: Layout) => {
   return (
-    <main className="flex gap-20">
+    <main className="flex ">
       <AsideNavbar />
       {children}
     </main>
