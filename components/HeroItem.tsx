@@ -9,10 +9,10 @@ interface Props {
 const HeroItem: FC<Props> = ({ hero }) => {
   const { id, title, subtitle, car } = hero;
   return (
-    <div
+    <article
       className={`relative p-6 rounded-lg  ${
         id === 1
-          ? "bg-information500 bg-hero-pattern-one"
+          ? "bg-information500 bg-hero-pattern-one bg-cover"
           : "bg-primary500 bg-hero-pattern-two"
       }`}
     >
@@ -38,11 +38,11 @@ const HeroItem: FC<Props> = ({ hero }) => {
           height="0"
           sizes="100vw"
           quality={100}
-          className="w-fit h-fit min-w-[196px] min-h-[56px] mx-auto"
+          className="w-[400px] h-fit min-w-[200px] min-h-[56px] mx-auto"
           alt={"Sport car"}
         />
       </div>
-    </div>
+    </article>
   );
 };
 

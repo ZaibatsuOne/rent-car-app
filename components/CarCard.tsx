@@ -41,7 +41,7 @@ const CarCard: FC<Props> = ({ car }) => {
       <CardHeader>
         <CardTitle className="flex justify-between items-center">
           <Text className="whitespace-nowrap">{car.name}</Text>
-          <AddFavorite car={car} />
+          {/* <AddFavorite car={car} /> */}
         </CardTitle>
         <CardDescription>
           <Text className="font-bold text-secondary300 capitalize">

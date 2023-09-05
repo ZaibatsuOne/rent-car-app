@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { ICar } from "@/types/types";
 import { FC, useState } from "react";
 import { Button } from "../ui/button";
@@ -34,7 +34,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
     },
   ];
 
-  const favoriteList = useAddFavorite((state) => state.favoriteList);
+  // const favoriteList = useAddFavorite((state) => state.favoriteList);
   return (
     <Flex direction="column" gap="7">
       <Flex justify="between" align="start">
@@ -59,11 +59,11 @@ const DescriptionSection: FC<Props> = ({ car }) => {
       <Text size="5" className=" text-secondary400">
         {description}
       </Text>
-      <div>
+      {/* <div>
         {favoriteList.map((item) => (
           <span>{item.name}</span>
         ))}
-      </div>
+      </div> */}
       <Flex direction="column" className="gap-16">
         <Grid columns="2" gap="4">
           {footerCard.map((param) => (

@@ -5,8 +5,8 @@ import VkProvider from "next-auth/providers/vk";
 export const authOptions: AuthOptions = {
   providers: [
     GithubProvider({
-      clientId: "7ef86fe57c6ab8dfa042",
-      clientSecret: "d38be3e740dbbc840f9bcdc190679a79dff6a384",
+      clientId: "facf0a94402ae5458a87",
+      clientSecret: "8cb8c45415cf39e0e29d3ea0398481618c04e9ed",
     }),
     VkProvider({
       clientId: "51735737",
