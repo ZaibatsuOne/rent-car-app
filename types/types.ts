@@ -74,3 +74,12 @@ export interface FavoriteState {
   addInFavorite: (car: ICar) => void;
   removeFromFavorite: (car: ICar) => void;
 }
+
+export interface IFormState {
+  name: string;
+  phone: string;
+  address: string;
+  town: string;
+  agreeEmail: boolean;
+  agreeTerms: boolean;
+}

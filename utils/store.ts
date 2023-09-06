@@ -3,6 +3,7 @@ import {
   CarState,
   FavoriteState,
   ICar,
+  IFormState,
   OpenFormState,
   PriceFilterState,
   SearchState,
@@ -75,7 +76,7 @@ export const useFormStore = create((set) => ({
     town: "",
     agreeEmail: false,
     agreeTerms: false,
-  },
+  } as IFormState,
   setFormData: (data: {
     name?: string;
     phone?: string;
