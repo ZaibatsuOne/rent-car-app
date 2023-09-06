@@ -27,14 +27,14 @@ const AddFavorite: FC<Props> = ({ car }) => {
     setCookie(cookie_key, liked.toString());
   }, [liked, cookie]);
 
-  const { addInFavorite, removeFromFavorite } = useAddFavorite();
+  const { addInFavorite } = useAddFavorite();
 
   const handleFavorite = (car: ICar) => {
     setLiked(!liked);
     if (liked === false) {
       addInFavorite(car);
     } else {
-      removeFromFavorite(car);
+      console.log(car);
     }
   };
 
