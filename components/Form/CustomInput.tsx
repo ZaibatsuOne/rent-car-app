@@ -9,7 +9,7 @@ interface Props {
   placeholder: string;
   register: any;
   errorMessage: string | undefined;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const CustomInput: FC<Props> = ({

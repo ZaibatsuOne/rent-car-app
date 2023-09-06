@@ -14,7 +14,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { reviewSchema } from "@/types/validate";
 
 interface FormValues {
-  role: string | undefined;
+  role?: string | undefined;
   review: string;
   date?: number;
   name?: string;
