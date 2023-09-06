@@ -2,6 +2,7 @@ import {
   CapacityFilterState,
   CarState,
   FavoriteState,
+  FormState,
   ICar,
   IFormState,
   OpenFormState,
@@ -68,7 +69,7 @@ export const useAddFavorite = create<FavoriteState>((set) => ({
     })),
 }));
 
-export const useFormStore = create((set) => ({
+export const useFormStore = create<FormState>((set) => ({
   formData: {
     name: "",
     phone: "",
@@ -76,13 +77,7 @@ export const useFormStore = create((set) => ({
     town: "",
     agreeEmail: false,
     agreeTerms: false,
-  } as IFormState,
-  setFormData: (data: {
-    name?: string;
-    phone?: string;
-    address?: string;
-    town?: string;
-    agreeEmail?: boolean;
-    agreeTerms?: boolean;
-  }) => set((state) => ({ formData: { ...state.formData, ...data } })),
+  },
+  setFormData: (data) =>
+    set((state) => ({ formData: { ...state.formData, ...data } })),
 }));

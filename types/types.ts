@@ -83,3 +83,8 @@ export interface IFormState {
   agreeEmail: boolean;
   agreeTerms: boolean;
 }
+
+export interface FormState {
+  formData: IFormState;
+  setFormData: (data: IFormState) => void;
+}
