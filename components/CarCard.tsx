@@ -14,7 +14,6 @@ import { Button } from "./ui/button";
 import { ICar } from "@/types/types";
 import { useMediaQuery } from "react-responsive";
 import { Box, Flex, Text } from "@radix-ui/themes";
-import AddFavorite from "./ui/AddFavorite";
 
 interface Props {
   car: ICar;
@@ -37,11 +36,10 @@ const CarCard: FC<Props> = ({ car }) => {
     },
   ];
   return (
-    <Card className="flex flex-col shadow-xl min-h-[403px]">
+    <Card className="flex flex-col min-h-[403px]">
       <CardHeader>
         <CardTitle className="flex justify-between items-center">
           <Text className="whitespace-nowrap">{car.name}</Text>
-          {/* <AddFavorite car={car} /> */}
         </CardTitle>
         <CardDescription>
           <Text className="font-bold text-secondary300 capitalize">
