@@ -5,7 +5,7 @@ import RentalSummary from "@/components/RentalSummary";
 import carService from "@/services/car.service";
 import { Metadata } from "next";
 
-const getOneCar = async (id: number) => {
+const getCar = async (id: number) => {
   const data = await carService.getById(id);
   return data.data;
 };
@@ -16,14 +16,14 @@ interface Props {
 
 export const generateMetadata = async (props: Props): Promise<Metadata> => {
   const { params } = props;
-  const car = await getOneCar(params.id);
+  const car = await getCar(params.id);
   return {
     title: "Billing - " + car.name,
   };
 };
 
 export default async function BillingPage({ params: { id } }: Props) {
-  const oneCar = await getOneCar(id);
+  const oneCar = await getCar(id);
   return (
     <main className="container py-10">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
