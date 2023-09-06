@@ -5,22 +5,23 @@ import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
 import { Label } from "../ui/label";
 import { useFormStore } from "@/utils/store";
+import { FormState, IFormState } from "@/types/types";
 
 const ConfiramtionForm = () => {
-  const { formData, setFormData } = useFormStore();
+  const { formData, setFormData } = useFormStore() as FormState;
 
-  const handleEmailCheckboxChange = (isChecked) => {
-    setFormData((prevData) => ({
-      ...prevData,
+  const handleEmailCheckboxChange = (isChecked: boolean) => {
+    setFormData({
+      ...formData,
       agreeEmail: isChecked,
-    }));
+    });
   };
 
   const handleTermsCheckboxChange = () => {
-    setFormData((prevData) => ({
-      ...prevData,
-      agreeTerms: !prevData.agreeTerms,
-    }));
+    setFormData({
+      ...formData,
+      agreeTerms: !formData.agreeTerms,
+    });
   };
 
   const handleRentNowClick = () => {
