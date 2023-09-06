@@ -18,7 +18,16 @@ const BillingInfo: FC<Props> = () => {
     mode: "onChange",
   });
 
-  const { setFormData } = useFormStore();
+  const { setFormData } = useFormStore() as {
+    setFormData: (data: {
+      name?: string;
+      phone?: string;
+      address?: string;
+      town?: string;
+      agreeEmail?: boolean;
+      agreeTerms?: boolean;
+    }) => void;
+  };
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData({ name: event.target.value });

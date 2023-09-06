@@ -76,6 +76,12 @@ export const useFormStore = create((set) => ({
     agreeEmail: false,
     agreeTerms: false,
   },
-  setFormData: (data) =>
-    set((state) => ({ formData: { ...state.formData, ...data } })),
+  setFormData: (data: {
+    name?: string;
+    phone?: string;
+    address?: string;
+    town?: string;
+    agreeEmail?: boolean;
+    agreeTerms?: boolean;
+  }) => set((state) => ({ formData: { ...state.formData, ...data } })),
 }));
