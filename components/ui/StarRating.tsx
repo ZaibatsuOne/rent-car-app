@@ -29,11 +29,10 @@ const StarRating: FC<Props> = ({ car }) => {
 
   return (
     <Flex gap="1">
-      {[...Array(5)].map((star, index) => {
+      {[...Array(5)].map((_, index) => {
         const ratingValue = index + 1;
-
         return (
-          <label>
+          <label key={index}>
             <input
               name="rating"
               type="radio"

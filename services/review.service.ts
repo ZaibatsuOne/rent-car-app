@@ -1,17 +1,14 @@
 import axios from "axios";
 import { IReview } from "@/types/types";
 
+const BASE_URL = process.env.NEXT_PUBLIC_REVIEW_URL as string;
+
 class ReviewService {
   async getAll() {
-    return axios.get<IReview[]>(
-      "https://6454dae6a74f994b334ad4fb.mockapi.io/carReview"
-    );
+    return axios.get<IReview[]>(BASE_URL);
   }
   async create(review: IReview) {
-    return axios.post<IReview>(
-      "https://6454dae6a74f994b334ad4fb.mockapi.io/carReview",
-      review
-    );
+    return axios.post<IReview>(BASE_URL, review);
   }
 }
 

@@ -27,6 +27,7 @@ const ImageSection: FC<Props> = ({ car }) => {
       <Flex gap="6" align="center">
         {car.photos.map((photo, index) => (
           <div
+            key={index}
             className={`flex items-center overflow-hidden justify-center bg-primary500 rounded-xl cursor-pointer ${
               currentPhoto === index + 1
                 ? "w-[132px] h-[108px] outline-primary500 outline outline-offset-8"
