@@ -14,7 +14,7 @@ const ImageSection: FC<Props> = ({ car }) => {
 
   return (
     <Flex direction="column" gap="6">
-      <div className=" w-[492px] h-[300px] overflow-hidden rounded-xl bg-primary500 bg-hero-pattern-two">
+      <div className=" w-full h-full max-w-[492px] max-h-[300px] overflow-hidden rounded-xl bg-primary500 bg-hero-pattern-two">
         <Image
           width={1920}
           height={1080}

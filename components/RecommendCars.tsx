@@ -16,7 +16,7 @@ const RecommendCars: FC<Props> = ({ columns = "4", count, cars }) => {
   return (
     <section className="flex flex-col gap-5">
       <SectionBar title="Recomendation Car" button={false} />
-      <Grid columns={columns} gap="8" className="lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {cars
           ?.filter((car) => car.priority === "recommended")
           .slice(0, count)
@@ -25,7 +25,7 @@ const RecommendCars: FC<Props> = ({ columns = "4", count, cars }) => {
               <CarCard car={car} key={car.image} />
             </Link>
           ))}
-      </Grid>
+      </div>
     </section>
   );
 };

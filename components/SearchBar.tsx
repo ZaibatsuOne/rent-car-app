@@ -9,12 +9,7 @@ const SearchBar: FC = () => {
   const { searchValue, setSearchValue } = useSearch();
 
   return (
-    <TextFieldRoot
-      radius="full"
-      size="3"
-      variant="surface"
-      className="w-[800px]"
-    >
+    <TextFieldRoot radius="full" size="3" variant="surface" className="">
       <TextFieldSlot>
         <Search />
       </TextFieldSlot>

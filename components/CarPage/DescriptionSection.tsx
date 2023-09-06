@@ -36,7 +36,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
 
   // const favoriteList = useAddFavorite((state) => state.favoriteList);
   return (
-    <Flex direction="column" gap="7" className="bg-white p-6">
+    <Flex direction="column" className="bg-white p-6 rounded-xl gap-4 sm:gap-7">
       <Flex justify="between" align="start">
         <Flex className="flex flex-col gap-2">
           <Heading size="8" weight="bold" className="text-secondary500">
@@ -56,24 +56,23 @@ const DescriptionSection: FC<Props> = ({ car }) => {
         </Flex>
         <AddFavorite car={car} />
       </Flex>
-      <Text size="5" className=" text-secondary400">
+      <Text className=" text-secondary400 text-xs sm:text-base">
         {description}
       </Text>
-      {/* <div>
-        {favoriteList.map((item) => (
-          <span>{item.name}</span>
-        ))}
-      </div> */}
+
       <Flex direction="column" className="gap-16">
         <Grid columns="2" gap="4">
           {footerCard.map((param) => (
             <Flex justify="between" className="text-xl">
-              <Text as="span" className="text-secondary300">
+              <Text
+                as="span"
+                className="text-secondary300 text-xs sm:text-base"
+              >
                 {param.title}
               </Text>
               <Text
                 as="span"
-                className="capitalize font-semibold text-secondary400"
+                className="capitalize font-semibold text-secondary400 text-xs sm:text-base"
               >
                 {param.value} {param.subtitle}
               </Text>
@@ -82,10 +81,10 @@ const DescriptionSection: FC<Props> = ({ car }) => {
         </Grid>
         <Flex justify="between" align="center">
           <div className="font-bold">
-            <Text as="span" size="7" className="text-secondary500">
+            <Text as="span" className="text-secondary500 text-xl">
               ${price}.00/ 
             </Text>
-            <Text as="span" className="text-secondary300">
+            <Text as="span" className="text-secondary300 text-xs sm:text-base">
               days
             </Text>
           </div>

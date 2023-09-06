@@ -31,7 +31,7 @@ const ReviewItem = ({ review }: Props) => {
   const year = normalDate.getFullYear();
 
   return (
-    <Flex direction="column" gap="5">
+    <Flex direction="column" className="gap-1 md:gap-5">
       <Flex justify="between">
         <Flex gap="3">
           <img
@@ -47,26 +47,31 @@ const ReviewItem = ({ review }: Props) => {
             <Text weight="bold" size="4" className="text-secondary500">
               {review.name}
             </Text>
-            <Text weight="medium" className="text-secondary300">
+            <Text
+              weight="medium"
+              className="text-secondary300 text-xs sm:text-base"
+            >
               {review.role}
             </Text>
           </Flex>
         </Flex>
         <Flex direction="column" gap="1">
-          <Text as="span">
+          <Text as="span" className="text-xs sm:text-base">
             {day} {month} {year}
           </Text>
           <Flex gap="1">
-            <Star fill="#currentColor" />
-            <Star fill="#currentColor" />
-            <Star fill="#currentColor" />
-            <Star fill="#currentColor" />
-            <Star />
+            <Star fill="#currentColor" className="w-3 h-3 md:h-5 md:w-5" />
+            <Star fill="#currentColor" className="w-3 h-3 md:h-5 md:w-5" />
+            <Star fill="#currentColor" className="w-3 h-3 md:h-5 md:w-5" />
+            <Star fill="#currentColor" className="w-3 h-3 md:h-5 md:w-5" />
+            <Star className="w-3 h-3 md:h-5 md:w-5" />
           </Flex>
         </Flex>
       </Flex>
       <div className="text-ellipsis overflow-hidden max-w-5xl">
-        <Text className="text-secondary400 pl-[72px] ">{review.review}</Text>
+        <Text className="text-secondary400 pl-[72px] text-xs sm:text-base">
+          {review.review}
+        </Text>
       </div>
     </Flex>
   );

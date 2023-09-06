@@ -6,23 +6,19 @@ import { Separator } from "./ui/separator";
 
 const NavBar = () => {
   return (
-    <header className="bg-white">
+    <header className="bg-white flex flex-col gap-0">
       <nav className="container py-10 flex justify-between items-start lg:items-center">
-        <Flex
-          direction="column"
-          gap="8"
-          align="start"
-          className="lg:flex-row lg:gap-16 lg:items-center"
-        >
-          <Link href="/">
-            <Heading size="7" weight="bold" className="text-primary500">
-              MORENT
-            </Heading>
-          </Link>
-        </Flex>
-        <SearchBar />
+        <Link href="/">
+          <Heading size="7" weight="bold" className="text-primary500">
+            MORENT
+          </Heading>
+        </Link>
+        <span className="hidden lg:block max-w-[600px] w-full">
+          <SearchBar />
+        </span>
         <UserAccountNav />
       </nav>
+
       <Separator />
     </header>
   );

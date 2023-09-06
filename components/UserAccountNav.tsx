@@ -29,9 +29,16 @@ const UserAccountNav = async () => {
       <Flex gap="4" align="center">
         <Text>{firstName}</Text>
         {session?.user?.image ? (
-          <img src={session.user.image} className="w-11 h-11 rounded-full" />
+          <Link href="/api/auth/signout">
+            <img src={session.user.image} className="w-11 h-11 rounded-full" />
+          </Link>
         ) : (
-          <div className="rounded-full h-11 w-11 bg-secondary600" />
+          <Link href="/api/auth/signin">
+            <img
+              src="/avatars/emptyAvatar.jpg"
+              className="w-11 h-11 rounded-full"
+            />
+          </Link>
         )}
       </Flex>
     </div>

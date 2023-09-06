@@ -10,6 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Text } from "@radix-ui/themes";
+import { useMediaQuery } from "react-responsive";
 
 interface Props {
   userData: string | null | undefined;
@@ -17,10 +18,11 @@ interface Props {
 
 const LeaveFeedback: FC<Props> = ({ userData }) => {
   const { openForm, setOpenForm } = useLeaveFeedback();
+
   return (
     <>
       {userData ? (
-        <Button size="md" variant="minimal" onClick={setOpenForm}>
+        <Button size="sm" variant="minimal" onClick={setOpenForm}>
           {openForm ? "Close Form" : "Leave Feedback"}
         </Button>
       ) : (
