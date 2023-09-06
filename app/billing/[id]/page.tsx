@@ -22,7 +22,7 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
   };
 };
 
-const BillingPage = async ({ params: { id } }: Props) => {
+export default async function BillingPage({ params: { id } }: Props) {
   const oneCar = await getOneCar(id);
   return (
     <main className="container py-10">
@@ -38,6 +38,4 @@ const BillingPage = async ({ params: { id } }: Props) => {
       </div>
     </main>
   );
-};
-
-export default BillingPage;
+}
