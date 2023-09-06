@@ -88,7 +88,9 @@ const DescriptionSection: FC<Props> = ({ car }) => {
               days
             </Text>
           </div>
-          <Button size="lg">Rent Now</Button>
+          <Button size="lg" href={`/billing/${car.id}`}>
+            Rent Now
+          </Button>
         </Flex>
       </Flex>
     </Flex>

@@ -153,3 +153,23 @@ export const reviews = [
       "We are greatly helped by the services of the MORENT Application. Morent has low prices and also a wide variety of cars with good and comfortable facilities. In addition, the service provided by the officers is also very friendly and very polite.",
   },
 ];
+
+export const billingForm = [
+  {
+    title: "Billing Info",
+    subtitle: "Please enter your billing info",
+  },
+  {
+    title: "Rental Info",
+    subtitle: "Please select your rental date",
+  },
+  {
+    title: "Payment Method",
+    subtitle: "Please enter your payment method",
+  },
+  {
+    title: "Confirmation",
+    subtitle:
+      "We are getting to the end. Just few clicks and your rental is ready!",
+  },
+];

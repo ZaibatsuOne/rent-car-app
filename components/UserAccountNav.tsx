@@ -12,16 +12,27 @@ const UserAccountNav = async () => {
   return (
     <div className="flex gap-7 items-center text-secondary400">
       <span className="hidden lg:flex gap-7 items-center">
-        <Link href="/favorite">
+        <Link
+          href="/favorite"
+          className="border-solid border-2 border-secondary200 p-2 rounded-full"
+        >
           <Heart />
         </Link>
-        <Bell />
+        <div className="border-solid border-2 border-secondary200 p-2 rounded-full">
+          <Bell />
+        </div>
         {session?.user ? (
-          <Link href="/api/auth/signout">
+          <Link
+            href="/api/auth/signout"
+            className="border-solid border-2 border-secondary200 p-2 rounded-full"
+          >
             <LogOut className="text-error600" />
           </Link>
         ) : (
-          <Link href="/api/auth/signin">
+          <Link
+            href="/api/auth/signin"
+            className="border-solid border-2 border-secondary200 p-2 rounded-full"
+          >
             <LogIn className="text-success600" />
           </Link>
         )}

@@ -8,13 +8,27 @@ interface Props {
   labelFor: string;
   placeholder: string;
   register: any;
+  errorMessage: string | undefined;
 }
 
-const CustomInput: FC<Props> = ({ label, labelFor, placeholder, register }) => {
+const CustomInput: FC<Props> = ({
+  label,
+  labelFor,
+  placeholder,
+  register,
+  errorMessage,
+}) => {
   return (
     <Flex direction="column" gap="4">
       <Label htmlFor={labelFor}>{label}</Label>
-      <Input placeholder={placeholder} {...register} />
+      <div>
+        <Input
+          placeholder={placeholder}
+          {...register}
+          className="bg-[#F6F7F9]"
+        />
+        <span className="text-xs text-error600">{errorMessage}</span>
+      </div>
     </Flex>
   );
 };
