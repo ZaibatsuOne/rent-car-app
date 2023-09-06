@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { ChangeEvent, FC } from "react";
 import { Flex } from "@radix-ui/themes";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -9,6 +9,7 @@ interface Props {
   placeholder: string;
   register: any;
   errorMessage: string | undefined;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const CustomInput: FC<Props> = ({
@@ -17,6 +18,7 @@ const CustomInput: FC<Props> = ({
   placeholder,
   register,
   errorMessage,
+  onChange,
 }) => {
   return (
     <Flex direction="column" gap="4">
@@ -26,6 +28,7 @@ const CustomInput: FC<Props> = ({
           placeholder={placeholder}
           {...register}
           className="bg-[#F6F7F9]"
+          onChange={onChange}
         />
         <span className="text-xs text-error600">{errorMessage}</span>
       </div>

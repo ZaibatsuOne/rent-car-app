@@ -1,12 +1,18 @@
 import { FC, PropsWithChildren } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardTitle } from "./ui/card";
 import { Text } from "@radix-ui/themes";
+import { cn } from "@/lib/utils";
 
 interface Props {
   step?: number;
+  className?: string;
 }
 
-const BillingCard: FC<PropsWithChildren<Props>> = ({ children, step = 1 }) => {
+const BillingCard: FC<PropsWithChildren<Props>> = ({
+  children,
+  step = 1,
+  className,
+}) => {
   let title = "";
   let description = "";
 
@@ -20,10 +26,6 @@ const BillingCard: FC<PropsWithChildren<Props>> = ({ children, step = 1 }) => {
       description = "Please select your rental date";
       break;
     case 3:
-      title = "Payment Method";
-      description = "Please enter your payment method";
-      break;
-    case 4:
       title = "Confirmation";
       description =
         "We are getting to the end. Just a few clicks and your rental is ready!";
@@ -36,16 +38,20 @@ const BillingCard: FC<PropsWithChildren<Props>> = ({ children, step = 1 }) => {
   }
 
   return (
-    <Card className="flex flex-col gap-8 p-6">
+    <Card className={cn("flex flex-col gap-8 p-6", className)}>
       <header className="flex justify-between items-end">
         <div className="flex flex-col gap-1">
           <CardTitle>{title}</CardTitle>
-          <Text className="text-secondary300 text-sm">{description}</Text>
+          <Text className="text-secondary300 text-xs lg:text-sm">
+            {description}
+          </Text>
         </div>
         {step === 5 ? (
           ""
         ) : (
-          <span className="text-secondary300 text-sm">Step {step} of 4</span>
+          <span className="text-secondary300 text-xs lg:text-sm">
+            Step {step} of 3
+          </span>
         )}
       </header>
       <div>{children}</div>

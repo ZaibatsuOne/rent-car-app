@@ -26,7 +26,11 @@ interface Props {
   avatar: string | null | undefined;
 }
 const ReviewForm: FC<Props> = ({ name, avatar }) => {
-  const { register, handleSubmit } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     resolver: yupResolver(reviewSchema),
   });
 
@@ -70,6 +74,7 @@ const ReviewForm: FC<Props> = ({ name, avatar }) => {
               labelFor="job"
               placeholder="Job title"
               label="Your job title"
+              errorMessage={errors.role?.message}
             />
             <CustomTextarea
               register={{ ...register("review") }}

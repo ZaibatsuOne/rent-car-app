@@ -34,12 +34,12 @@ const RentalSummary: FC<Props> = ({ car }) => {
   return (
     <BillingCard step={5}>
       <div className="flex flex-col gap-8">
-        <div className="flex items-center gap-4">
+        <div className="grid grid-cols-2">
           <div className="w-32 h-28 px-2 bg-hero-pattern-two bg-primary400 bg-cover rounded-xl flex items-center justify-center">
             <Image src={car.image} alt={car.name} width={1920} height={1080} />
           </div>
           <div className="flex flex-col gap-2">
-            <h2 className="font-bold text-3xl">{car.name}</h2>
+            <h2 className="font-bold text-lg lg:text-3xl">{car.name}</h2>
             <div className="flex gap-2 text-xs text-secondary300">
               {carParams.map((param) => (
                 <div className="flex gap-1 items-center" key={param.value}>

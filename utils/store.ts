@@ -66,3 +66,16 @@ export const useAddFavorite = create<FavoriteState>((set) => ({
       favoriteList: state.favoriteList.filter((car) => car !== car.id),
     })),
 }));
+
+export const useFormStore = create((set) => ({
+  formData: {
+    name: "",
+    phone: "",
+    address: "",
+    town: "",
+    agreeEmail: false,
+    agreeTerms: false,
+  },
+  setFormData: (data) =>
+    set((state) => ({ formData: { ...state.formData, ...data } })),
+}));

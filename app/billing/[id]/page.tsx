@@ -17,16 +17,15 @@ const BillingPage = async ({ params: { id } }: Props) => {
   const car = await getOneCar(id);
   return (
     <main className="container py-10">
-      <div className="grid grid-cols-3 gap-8">
-        <section className="flex flex-col gap-8 col-span-2">
-          <BillingInfo />
-          <RentalInfoForm />
-          <PaymentMethodForm />
-          <ConfiramtionForm />
-        </section>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div>
           <RentalSummary car={car} />
         </div>
+        <section className="flex flex-col gap-8 lg:col-span-2">
+          <BillingInfo />
+          <RentalInfoForm />
+          <ConfiramtionForm />
+        </section>
       </div>
     </main>
   );
