@@ -63,10 +63,6 @@ export const useAddFavorite = create<FavoriteState>((set) => ({
   favoriteList: [],
   addInFavorite: (car: ICar) =>
     set((state) => ({ favoriteList: [...state.favoriteList, car] })),
-  removeFromFavorite: () =>
-    set((state) => ({
-      favoriteList: state.favoriteList.filter((car) => car !== car.id),
-    })),
 }));
 
 export const useFormStore = create<FormState>((set) => ({

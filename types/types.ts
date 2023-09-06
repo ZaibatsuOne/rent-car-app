@@ -72,7 +72,6 @@ export interface OpenFormState {
 export interface FavoriteState {
   favoriteList: ICar[];
   addInFavorite: (car: ICar) => void;
-  removeFromFavorite: (car: ICar) => void;
 }
 
 export interface IFormState {
