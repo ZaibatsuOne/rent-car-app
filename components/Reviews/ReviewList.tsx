@@ -1,19 +1,21 @@
 "use client";
 
+import { Button, Flex, Text } from "@radix-ui/themes";
+import { FC, useState } from "react";
+
+import { ChevronDown } from "lucide-react";
 import ReviewItem from "./ReviewItem";
 import reviewService from "@/services/review.service";
-import { Flex, Button, Text } from "@radix-ui/themes";
-import { ChevronDown } from "lucide-react";
-import { useState, FC } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 const ReviewList: FC = () => {
-  const [reviewsCount, setReviewsCount] = useState(2);
-
   const { data } = useQuery(["reviews"], () => reviewService.getAll(), {
     select: ({ data }) => data,
   });
 
+  console.log(data);
+
+  const [reviewsCount, setReviewsCount] = useState(2);
   const reviews = data ?? [];
 
   return (

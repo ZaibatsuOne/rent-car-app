@@ -1,5 +1,5 @@
-import axios from "axios";
 import { IReview } from "@/types/types";
+import axios from "axios";
 
 const BASE_URL = process.env.NEXT_PUBLIC_REVIEW_URL as string;
 

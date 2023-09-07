@@ -128,30 +128,6 @@ export const reviews = [
     review:
       "We are greatly helped by the services of the MORENT Application. Morent has low prices and also a wide variety of cars with good and comfortable facilities. In addition, the service provided by the officers is also very friendly and very polite.",
   },
-  {
-    name: "Skylar Dias",
-    role: "CEO at Amazon",
-    date: "20 July 2022",
-    avatar: "/avatars/reviewTwo.png",
-    review:
-      "We are greatly helped by the services of the MORENT Application. Morent has low prices and also a wide variety of cars with good and comfortable facilities. In addition, the service provided by the officers is also very friendly and very polite.",
-  },
-  {
-    name: "Skylar Dias",
-    role: "CEO at Amazon",
-    date: "20 July 2022",
-    avatar: "/avatars/reviewTwo.png",
-    review:
-      "We are greatly helped by the services of the MORENT Application. Morent has low prices and also a wide variety of cars with good and comfortable facilities. In addition, the service provided by the officers is also very friendly and very polite.",
-  },
-  {
-    name: "Skylar Dias",
-    role: "CEO at Amazon",
-    date: "20 July 2022",
-    avatar: "/avatars/reviewTwo.png",
-    review:
-      "We are greatly helped by the services of the MORENT Application. Morent has low prices and also a wide variety of cars with good and comfortable facilities. In addition, the service provided by the officers is also very friendly and very polite.",
-  },
 ];
 
 export const billingForm = [

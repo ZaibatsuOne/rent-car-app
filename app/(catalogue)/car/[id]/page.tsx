@@ -6,7 +6,7 @@ import RecommendCars from "@/components/RecommendCars";
 import Reviews from "@/components/Reviews/Reviews";
 import carService from "@/services/car.service";
 
-const getOneCar = async (id: any) => {
+const getOneCar = async (id: number) => {
   const data = await carService.getById(id);
   return data.data;
 };
@@ -17,7 +17,7 @@ const getAllCar = async () => {
 };
 
 interface Props {
-  params: { id: any };
+  params: { id: number };
 }
 
 export const generateMetadata = async (props: Props): Promise<Metadata> => {
