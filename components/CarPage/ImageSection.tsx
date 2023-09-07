@@ -12,7 +12,7 @@ interface Props {
 
 const ImageSection: FC<Props> = ({ car }) => {
   const [currentPhoto, setCurrentPhoto] = useState(1);
-  const [mainPhoto, setMainPhoto] = useState(car.photos[0]);
+  const [mainPhoto, setMainPhoto] = useState<string>(car?.photos?.[0] || "");
 
   return (
     <Flex direction="column" gap="6">
@@ -27,7 +27,7 @@ const ImageSection: FC<Props> = ({ car }) => {
         />
       </div>
       <Flex gap="6" align="center">
-        {car.photos.map((photo, index) => (
+        {car?.photos?.map((photo, index) => (
           <div
             key={index}
             className={`flex items-center overflow-hidden justify-center bg-primary500 rounded-xl cursor-pointer ${

@@ -1,14 +1,13 @@
-import axios from "axios";
 import { ICar } from "@/types/types";
+import axios from "axios";
 
-const BASE_URL = process.env.NEXT_PUBLIC_CARS_URL as string;
 class CarService {
   async getAll() {
-    return axios.get<ICar[]>(BASE_URL);
+    return axios.get<ICar[]>(`${process.env.BASE_URL}/api/cars`);
   }
 
-  async getById(id: number) {
-    return axios.get<ICar>(`${BASE_URL}/${id}`);
+  async getById(id: any) {
+    return axios.get<ICar>(`${process.env.BASE_URL}/api/cars?id=${id}`);
   }
 }
 
