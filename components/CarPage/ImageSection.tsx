@@ -21,7 +21,7 @@ const ImageSection: FC<Props> = ({ car }) => {
           src={mainPhoto}
           alt="car"
           quality={100}
-          className="object-cover h-full w-full"
+          className="object-cover w-full h-full"
         />
       </div>
       <Flex gap="6" align="center">
@@ -43,7 +43,7 @@ const ImageSection: FC<Props> = ({ car }) => {
               height={720}
               src={photo}
               alt="car"
-              className="w-full h-36 object-cover"
+              className="h-36 object-cover w-full"
             />
           </div>
         ))}

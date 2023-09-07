@@ -31,44 +31,44 @@ const ReviewItem = ({ review }: Props) => {
   const year = normalDate.getFullYear();
 
   return (
-    <Flex direction="column" className="gap-1 md:gap-5">
+    <Flex direction="column" className="md:gap-5 gap-1">
       <Flex justify="between">
         <Flex gap="3">
           <img
             src={review.avatar}
-            className="rounded-full w-14 h-14"
+            className="w-14 h-14 rounded-full"
             alt="User Avatar"
           />
           <Flex
             direction="column"
             gap="1"
-            className="text-ellipsis overflow-hidden max-w-4xl "
+            className="text-ellipsis  max-w-4xl overflow-hidden"
           >
             <Text weight="bold" size="4" className="text-secondary500">
               {review.name}
             </Text>
             <Text
               weight="medium"
-              className="text-secondary300 text-xs sm:text-base"
+              className="text-secondary300 sm:text-base text-xs"
             >
               {review.role}
             </Text>
           </Flex>
         </Flex>
         <Flex direction="column" gap="1">
-          <Text as="span" className="text-xs sm:text-base">
+          <Text as="span" className="sm:text-base text-xs">
             {day} {month} {year}
           </Text>
           <Flex gap="1">
-            <Star fill="#currentColor" className="w-3 h-3 md:h-5 md:w-5" />
-            <Star fill="#currentColor" className="w-3 h-3 md:h-5 md:w-5" />
-            <Star fill="#currentColor" className="w-3 h-3 md:h-5 md:w-5" />
-            <Star fill="#currentColor" className="w-3 h-3 md:h-5 md:w-5" />
-            <Star className="w-3 h-3 md:h-5 md:w-5" />
+            <Star fill="#currentColor" className="md:h-5 md:w-5 w-3 h-3" />
+            <Star fill="#currentColor" className="md:h-5 md:w-5 w-3 h-3" />
+            <Star fill="#currentColor" className="md:h-5 md:w-5 w-3 h-3" />
+            <Star fill="#currentColor" className="md:h-5 md:w-5 w-3 h-3" />
+            <Star className="md:h-5 md:w-5 w-3 h-3" />
           </Flex>
         </Flex>
       </Flex>
-      <div className="text-ellipsis overflow-hidden max-w-5xl">
+      <div className="text-ellipsis max-w-5xl overflow-hidden">
         <Text className="text-secondary400 pl-[72px] text-xs sm:text-base">
           {review.review}
         </Text>

@@ -10,28 +10,28 @@ const UserAccountNav = async () => {
   const firstName = fullName ? fullName.split(" ")[0] : "";
 
   return (
-    <div className="flex gap-7 items-center text-secondary400">
-      <span className="hidden lg:flex gap-7 items-center">
+    <div className="gap-7 text-secondary400 flex items-center">
+      <span className="lg:flex gap-7 items-center hidden">
         <Link
           href="/favorite"
-          className="border-solid border-2 border-secondary200 p-2 rounded-full"
+          className="border-secondary200 p-2 border-2 border-solid rounded-full"
         >
           <Heart />
         </Link>
-        <div className="border-solid border-2 border-secondary200 p-2 rounded-full">
+        <div className="border-secondary200 p-2 border-2 border-solid rounded-full">
           <Bell />
         </div>
         {session?.user ? (
           <Link
             href="/api/auth/signout"
-            className="border-solid border-2 border-secondary200 p-2 rounded-full"
+            className="border-secondary200 p-2 border-2 border-solid rounded-full"
           >
             <LogOut className="text-error600" />
           </Link>
         ) : (
           <Link
             href="/api/auth/signin"
-            className="border-solid border-2 border-secondary200 p-2 rounded-full"
+            className="border-secondary200 p-2 border-2 border-solid rounded-full"
           >
             <LogIn className="text-success600" />
           </Link>

@@ -6,8 +6,8 @@ import { Separator } from "./ui/separator";
 
 const NavBar = () => {
   return (
-    <header className="bg-white flex flex-col gap-0">
-      <nav className="container py-10 flex justify-between items-start lg:items-center">
+    <header className="flex flex-col gap-0 bg-white">
+      <nav className="lg:items-center container flex items-start justify-between py-10">
         <Link href="/">
           <Heading size="7" weight="bold" className="text-primary500">
             MORENT

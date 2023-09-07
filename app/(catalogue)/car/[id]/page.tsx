@@ -33,7 +33,7 @@ const CarPage = async ({ params: { id } }: Props) => {
   const allCars = await getAllCar();
   return (
     <main className="container flex flex-col gap-20 py-10">
-      <section className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+      <section className="xl:grid-cols-2 grid grid-cols-1 gap-8">
         <ImageSection car={oneCar} />
         <DescriptionSection car={oneCar} />
       </section>

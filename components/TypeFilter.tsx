@@ -33,7 +33,7 @@ const TypeFilter: FC<Props> = () => {
           render={() => (
             <FormItem>
               <div className="mb-4">
-                <FormLabel className="text-sm text-secondary300">
+                <FormLabel className="text-secondary300 text-sm">
                   TYPE
                 </FormLabel>
               </div>

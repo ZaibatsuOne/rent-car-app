@@ -8,7 +8,7 @@ interface Props {}
 const AsideNavbar: FC<Props> = () => {
   return (
     <div className="bg-white">
-      <aside className="container hidden md:flex flex-col gap-14 w-60 py-10">
+      <aside className="md:flex gap-14 w-60 container flex-col hidden py-10">
         <TypeFilter />
         <CapacityFilter />
         <PriceFilter />

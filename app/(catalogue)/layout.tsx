@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const layout = ({ children }: Layout) => {
   return (
-    <main className="flex ">
+    <main className="flex">
       <AsideNavbar />
       {children}
     </main>

@@ -9,7 +9,7 @@ const Footer: FC = () => {
     <>
       <Separator />
       <footer className="bg-white pb-[60px] pt-20">
-        <div className="container flex flex-col gap-9 ">
+        <div className="gap-9  container flex flex-col">
           <Flex
             direction="row"
             justify="between"
@@ -43,7 +43,7 @@ const Footer: FC = () => {
             direction="column-reverse"
             gap="3"
             justify="between"
-            className="lg:flex-row lg:gap-0 text-xs lg:text-base font-semibold"
+            className="lg:flex-row lg:gap-0 lg:text-base text-xs font-semibold"
           >
             <Text as="span">©2022 MORENT. All rights reserved</Text>
             <Flex gap="4">

@@ -30,7 +30,7 @@ const CustomInput: FC<Props> = ({
           className="bg-[#F6F7F9]"
           onChange={onChange}
         />
-        <span className="text-xs text-error600">{errorMessage}</span>
+        <span className="text-error600 text-xs">{errorMessage}</span>
       </div>
     </Flex>
   );

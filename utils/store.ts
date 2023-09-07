@@ -77,3 +77,12 @@ export const useFormStore = create<FormState>((set) => ({
   setFormData: (data) =>
     set((state) => ({ formData: { ...state.formData, ...data } })),
 }));
+
+export const useBillingForm = create((set) => ({
+  formState: {
+    emailCheck: false,
+    termsCheck: false,
+  },
+  setEmailCheck: (emailCheck) =>
+    set({ formState: { ...get().formState, emailCheck } }),
+}));

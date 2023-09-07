@@ -7,11 +7,11 @@ interface Props {
 }
 const FooterColumn: FC<Props> = ({ footerItem }) => {
   return (
-    <nav className="flex flex-col gap-7">
-      <h3 className="font-semibold lg:text-xl capitalize">
+    <nav className="gap-7 flex flex-col">
+      <h3 className="lg:text-xl font-semibold capitalize">
         {footerItem.title}
       </h3>
-      <ul className="flex flex-col gap-5 text-secondary400">
+      <ul className="text-secondary400 flex flex-col gap-5">
         {footerItem.subtitle.map((item) => (
           <Link href={item.link} key={item.link}>
             {item.name}

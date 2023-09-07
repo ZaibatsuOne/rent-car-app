@@ -46,7 +46,7 @@ const BillingInfo: FC<Props> = () => {
   };
   return (
     <BillingCard step={1}>
-      <form className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <form className="lg:grid-cols-2 grid grid-cols-1 gap-8">
         <CustomInput
           label="Name"
           labelFor="name"

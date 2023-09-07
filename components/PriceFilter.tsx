@@ -15,7 +15,7 @@ const PriceFilter: FC<Props> = () => {
 
   return (
     <Flex direction="column" gap="4">
-      <Text weight="medium" size="2" className="uppercase text-secondary300">
+      <Text weight="medium" size="2" className="text-secondary300 uppercase">
         Price
       </Text>
       <Flex direction="column" gap="2">

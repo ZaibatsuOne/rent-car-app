@@ -38,22 +38,22 @@ const CarCard: FC<Props> = ({ car }) => {
   return (
     <Card className="flex flex-col min-h-[403px]">
       <CardHeader>
-        <CardTitle className="flex justify-between items-center">
+        <CardTitle className="flex items-center justify-between">
           <Text className="whitespace-nowrap">{car.name}</Text>
         </CardTitle>
         <CardDescription>
-          <Text className="font-bold text-secondary300 capitalize">
+          <Text className="text-secondary300 font-bold capitalize">
             {car.type}
           </Text>
         </CardDescription>
       </CardHeader>
       {isLargeScreen ? (
-        <CardContent className="relative flex items-center justify-center py-10 flex-grow">
+        <CardContent className="relative flex items-center justify-center flex-grow py-10">
           <Image src={car.image} width={220} height={68} alt="car" />
           <div className="absolute bg-gradient-to-t from-white w-[220px] h-5 bottom-10" />
         </CardContent>
       ) : (
-        <CardContent className="relative flex items-center justify-between py-10 flex-grow">
+        <CardContent className="relative flex items-center justify-between flex-grow py-10">
           <Box>
             <Image src={car.image} width={166} height={68} alt="car" />
             <div className="absolute bg-gradient-to-t from-white w-[150px] lg:w-[220px] h-5 bottom-10" />
@@ -71,7 +71,7 @@ const CarCard: FC<Props> = ({ car }) => {
         </CardContent>
       )}
       {isLargeScreen ? (
-        <CardFooter className="flex flex-col gap-6 flex-grow-0">
+        <CardFooter className="flex flex-col flex-grow-0 gap-6">
           <div className="flex gap-4 items-center text-[12px] text-secondary300">
             {carParams.map((param) => (
               <Flex align="center" gap="1" key={param.value}>
@@ -84,10 +84,10 @@ const CarCard: FC<Props> = ({ car }) => {
           </div>
           <Flex gap="8" align="center">
             <Box>
-              <Text className="font-bold text-xl" as="span">
+              <Text className="text-xl font-bold" as="span">
                 ${car.price}.00/ 
               </Text>
-              <Text className="font-bold text-sm text-secondary300" as="span">
+              <Text className="text-secondary300 text-sm font-bold" as="span">
                 day
               </Text>
             </Box>
@@ -95,12 +95,12 @@ const CarCard: FC<Props> = ({ car }) => {
           </Flex>
         </CardFooter>
       ) : (
-        <CardFooter className="flex justify-between gap-6 flex-grow-0">
+        <CardFooter className="flex justify-between flex-grow-0 gap-6">
           <Box>
-            <Text className="font-bold text-xl" as="span">
+            <Text className="text-xl font-bold" as="span">
               ${car.price}.00/ 
             </Text>
-            <Text className="font-bold text-sm text-secondary300" as="span">
+            <Text className="text-secondary300 text-sm font-bold" as="span">
               day
             </Text>
           </Box>

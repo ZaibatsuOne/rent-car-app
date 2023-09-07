@@ -2,7 +2,7 @@ import { FC } from "react";
 
 const CarsNotFound: FC = () => {
   return (
-    <div className="container py-40 flex mx-auto items-center font-bold text-2xl text-secondary400 ">
+    <div className="text-secondary400 container flex items-center py-40 mx-auto text-2xl font-bold">
       Cars Not Found!
     </div>
   );

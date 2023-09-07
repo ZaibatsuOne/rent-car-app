@@ -16,10 +16,10 @@ const HeroItem: FC<Props> = ({ hero }) => {
           : "bg-primary500 bg-hero-pattern-two"
       }`}
     >
-      <div className="flex flex-col gap-5 text-white flex-grow ">
-        <div className="flex flex-col gap-3 lg:gap-4 w-38 lg:w-1/2">
-          <h2 className="font-semibold text-base md:text-3xl ">{title} </h2>
-          <p className="font-medium text-xs md:text-base">{subtitle}</p>
+      <div className=" flex flex-col flex-grow gap-5 text-white">
+        <div className="lg:gap-4 w-38 lg:w-1/2 flex flex-col gap-3">
+          <h2 className="md:text-3xl  text-base font-semibold">{title} </h2>
+          <p className="md:text-base text-xs font-medium">{subtitle}</p>
         </div>
         <div>
           <Button

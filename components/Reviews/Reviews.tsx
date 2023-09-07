@@ -17,7 +17,7 @@ const Reviews = async () => {
   const reviews = await getReviews();
 
   return (
-    <Flex direction="column" gap="7" className="bg-white p-6 rounded-xl">
+    <Flex direction="column" gap="7" className="rounded-xl p-6 bg-white">
       <Flex justify="between" align="center" className="gap-3">
         <Flex gap="3" align="center">
           <Heading weight="bold" className="text-secondary500">

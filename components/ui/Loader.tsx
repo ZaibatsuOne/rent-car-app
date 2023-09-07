@@ -1,6 +1,6 @@
 const Loader = () => {
   return (
-    <div className="mx-auto my-auto h-10 w-10 animate-spin">
+    <div className="animate-spin w-10 h-10 mx-auto my-auto">
       <svg
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"

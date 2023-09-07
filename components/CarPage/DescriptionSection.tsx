@@ -36,7 +36,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
 
   // const favoriteList = useAddFavorite((state) => state.favoriteList);
   return (
-    <Flex direction="column" className="bg-white p-6 rounded-xl gap-4 sm:gap-7">
+    <Flex direction="column" className="rounded-xl sm:gap-7 gap-4 p-6 bg-white">
       <Flex justify="between" align="start">
         <Flex className="flex flex-col gap-2">
           <Heading size="8" weight="bold" className="text-secondary500">
@@ -56,7 +56,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
         </Flex>
         <AddFavorite car={car} />
       </Flex>
-      <Text className=" text-secondary400 text-xs sm:text-base">
+      <Text className=" text-secondary400 sm:text-base text-xs">
         {description}
       </Text>
 
@@ -66,13 +66,13 @@ const DescriptionSection: FC<Props> = ({ car }) => {
             <Flex justify="between" className="text-xl">
               <Text
                 as="span"
-                className="text-secondary300 text-xs sm:text-base"
+                className="text-secondary300 sm:text-base text-xs"
               >
                 {param.title}
               </Text>
               <Text
                 as="span"
-                className="capitalize font-semibold text-secondary400 text-xs sm:text-base"
+                className="text-secondary400 sm:text-base text-xs font-semibold capitalize"
               >
                 {param.value} {param.subtitle}
               </Text>
@@ -84,7 +84,7 @@ const DescriptionSection: FC<Props> = ({ car }) => {
             <Text as="span" className="text-secondary500 text-xl">
               ${price}.00/ 
             </Text>
-            <Text as="span" className="text-secondary300 text-xs sm:text-base">
+            <Text as="span" className="text-secondary300 sm:text-base text-xs">
               days
             </Text>
           </div>

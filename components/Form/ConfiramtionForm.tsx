@@ -22,7 +22,7 @@ const ConfiramtionForm = () => {
               value={emailCheck}
               onChange={(e) => setEmailCheck(e.target.checked)}
             />
-            <Label htmlFor="email" className="text-xs lg:text-base">
+            <Label htmlFor="email" className="lg:text-base text-xs">
               I agree with sending an Marketing and newsletter emails. No spam,
               promissed!
             </Label>
@@ -34,7 +34,7 @@ const ConfiramtionForm = () => {
               value={termsCheck}
               onChange={(e) => setTermsCheck(e.target.checked)}
             />
-            <Label htmlFor="terms" className="text-xs lg:text-base">
+            <Label htmlFor="terms" className="lg:text-base text-xs">
               I agree with our terms and conditions and privacy policy.
             </Label>
           </div>
@@ -47,7 +47,7 @@ const ConfiramtionForm = () => {
             <ShieldCheck />
             <Label>All your data are safe</Label>
           </div>
-          <span className="text-sm text-secondary300">
+          <span className="text-secondary300 text-sm">
             We are using the most advanced security to provide you the best
             experience ever.
           </span>

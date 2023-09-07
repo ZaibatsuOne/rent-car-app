@@ -26,11 +26,11 @@ export default async function BillingPage({ params: { id } }: Props) {
   const oneCar = await getCar(id);
   return (
     <main className="container py-10">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="lg:grid-cols-3 grid grid-cols-1 gap-8">
         <div>
           <RentalSummary car={oneCar} />
         </div>
-        <section className="flex flex-col gap-8 lg:col-span-2">
+        <section className="lg:col-span-2 flex flex-col gap-8">
           <BillingInfo />
           <RentalInfoForm />
           <ConfiramtionForm />

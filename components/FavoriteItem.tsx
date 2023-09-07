@@ -13,7 +13,7 @@ interface Props {
 
 const FavoriteItem: FC<Props> = ({ car }) => {
   return (
-    <Card className="flex justify-between items-end">
+    <Card className="flex items-end justify-between">
       <CardHeader>
         <Flex gap="5">
           <Image src={car.image} alt={car.name} width={150} height={80} />
@@ -31,7 +31,7 @@ const FavoriteItem: FC<Props> = ({ car }) => {
         </Flex>
       </CardHeader>
       <CardFooter>
-        <Button variant="ghost" className="gap-1 items-center">
+        <Button variant="ghost" className="items-center gap-1">
           <Trash2 /> Remove from Favorite
         </Button>
       </CardFooter>

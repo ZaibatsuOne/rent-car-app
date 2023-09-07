@@ -39,17 +39,17 @@ const BillingCard: FC<PropsWithChildren<Props>> = ({
 
   return (
     <Card className={cn("flex flex-col gap-8 p-6", className)}>
-      <header className="flex justify-between items-end">
+      <header className="flex items-end justify-between">
         <div className="flex flex-col gap-1">
           <CardTitle>{title}</CardTitle>
-          <Text className="text-secondary300 text-xs lg:text-sm">
+          <Text className="text-secondary300 lg:text-sm text-xs">
             {description}
           </Text>
         </div>
         {step === 5 ? (
           ""
         ) : (
-          <span className="text-secondary300 text-xs lg:text-sm">
+          <span className="text-secondary300 lg:text-sm text-xs">
             Step {step} of 3
           </span>
         )}

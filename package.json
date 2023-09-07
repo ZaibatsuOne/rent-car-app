@@ -46,5 +46,8 @@
     "typescript": "5.1.6",
     "yup": "^1.2.0",
     "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "prettier-plugin-tailwind-css": "^1.5.0"
   }
 }
