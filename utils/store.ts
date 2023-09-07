@@ -1,4 +1,5 @@
 import {
+  BillingForm,
   CapacityFilterState,
   CarState,
   FavoriteState,
@@ -65,24 +66,18 @@ export const useAddFavorite = create<FavoriteState>((set) => ({
     set((state) => ({ favoriteList: [...state.favoriteList, car] })),
 }));
 
-export const useFormStore = create<FormState>((set) => ({
-  formData: {
-    name: "",
-    phone: "",
-    address: "",
-    town: "",
-    agreeEmail: false,
-    agreeTerms: false,
-  },
-  setFormData: (data) =>
-    set((state) => ({ formData: { ...state.formData, ...data } })),
-}));
-
-export const useBillingForm = create((set) => ({
+//Проверка формы заполнения в Billing
+export const useConfirmForm = create<BillingForm>((set) => ({
   formState: {
     emailCheck: false,
     termsCheck: false,
   },
-  setEmailCheck: (emailCheck) =>
-    set({ formState: { ...get().formState, emailCheck } }),
+  setEmailCheck: (checked) =>
+    set((state) => ({
+      formState: { ...state.formState, emailCheck: checked },
+    })),
+  setTermsCheck: (checked) =>
+    set((state) => ({
+      formState: { ...state.formState, termsCheck: checked },
+    })),
 }));

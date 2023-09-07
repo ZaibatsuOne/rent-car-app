@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react";
+
 export interface IHeroBanner {
   id: number;
   title: string;
@@ -74,16 +76,13 @@ export interface FavoriteState {
   addInFavorite: (car: ICar) => void;
 }
 
-export interface IFormState {
-  name: string;
-  phone: string;
-  address: string;
-  town: string;
-  agreeEmail: boolean;
-  agreeTerms: boolean;
+export interface IBillingState {
+  emailCheck: boolean;
+  termsCheck: boolean;
 }
 
-export interface FormState {
-  formData: IFormState;
-  setFormData: (data: IFormState) => void;
+export interface BillingForm {
+  formState: IBillingState;
+  setEmailCheck: (checked: boolean) => void;
+  setTermsCheck: (checked: boolean) => void;
 }

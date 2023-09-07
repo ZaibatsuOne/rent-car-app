@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import CustomInput from "./CustomInput";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { billingInfoSchema } from "@/types/validate";
-import { useFormStore } from "@/utils/store";
 
 interface Props {}
 
@@ -18,32 +17,6 @@ const BillingInfo: FC<Props> = () => {
     mode: "onChange",
   });
 
-  const { setFormData } = useFormStore() as {
-    setFormData: (data: {
-      name?: string;
-      phone?: string;
-      address?: string;
-      town?: string;
-      agreeEmail?: boolean;
-      agreeTerms?: boolean;
-    }) => void;
-  };
-
-  const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormData({ name: event.target.value });
-  };
-
-  const handlePhoneChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormData({ phone: event.target.value });
-  };
-
-  const handleAddressChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormData({ address: event.target.value });
-  };
-
-  const handleTownChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormData({ town: event.target.value });
-  };
   return (
     <BillingCard step={1}>
       <form className="lg:grid-cols-2 grid grid-cols-1 gap-8">
@@ -52,14 +25,14 @@ const BillingInfo: FC<Props> = () => {
           labelFor="name"
           placeholder="Your name"
           register={{ ...register("name") }}
-          onChange={handleNameChange}
+          // onChange={handleNameChange}
           errorMessage={errors.name?.message}
         />
         <CustomInput
           label="Phone Number"
           labelFor="phone "
           placeholder="Phone number"
-          onChange={handlePhoneChange}
+          // onChange={handlePhoneChange}
           register={{ ...register("phone") }}
           errorMessage={errors.phone?.message}
         />
@@ -67,7 +40,7 @@ const BillingInfo: FC<Props> = () => {
           label="Adress"
           labelFor="adress"
           placeholder="Adress"
-          onChange={handleAddressChange}
+          // onChange={handleAddressChange}
           register={{ ...register("adress") }}
           errorMessage={errors.adress?.message}
         />
@@ -75,7 +48,7 @@ const BillingInfo: FC<Props> = () => {
           label="Town/City"
           labelFor="town"
           placeholder="Town or city"
-          onChange={handleTownChange}
+          // onChange={handleTownChange}
           register={{ ...register("town") }}
           errorMessage={errors.town?.message}
         />

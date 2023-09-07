@@ -4,13 +4,15 @@ import { ShieldCheck } from "lucide-react";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 import { useState } from "react";
+import { useConfirmForm } from "@/utils/store";
 
 const ConfiramtionForm = () => {
-  //Проверка чекбокса почты
-  const [emailCheck, setEmailCheck] = useState(false);
-  //Проверка чекбокса Terms
-  const [termsCheck, setTermsCheck] = useState(false);
+  const { formState, setEmailCheck, setTermsCheck } = useConfirmForm();
 
+  const handleBilling = () => {
+    console.log(formState.emailCheck);
+    console.log(formState.termsCheck);
+  };
   return (
     <BillingCard step={3}>
       <div className="flex flex-col gap-8">
@@ -19,7 +21,7 @@ const ConfiramtionForm = () => {
             <input
               type="checkbox"
               className="w-4 h-4"
-              value={emailCheck}
+              checked={formState.emailCheck}
               onChange={(e) => setEmailCheck(e.target.checked)}
             />
             <Label htmlFor="email" className="lg:text-base text-xs">
@@ -31,7 +33,7 @@ const ConfiramtionForm = () => {
             <input
               type="checkbox"
               className="w-4 h-4"
-              value={termsCheck}
+              checked={formState.termsCheck}
               onChange={(e) => setTermsCheck(e.target.checked)}
             />
             <Label htmlFor="terms" className="lg:text-base text-xs">
@@ -40,7 +42,7 @@ const ConfiramtionForm = () => {
           </div>
         </div>
         <div>
-          <Button onClick={() => console.log(termsCheck)}>Rent Now</Button>
+          <Button onClick={handleBilling}>Rent Now</Button>
         </div>
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
