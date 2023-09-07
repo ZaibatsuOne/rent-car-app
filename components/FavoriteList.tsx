@@ -1,7 +1,8 @@
 "use client";
-import { useAddFavorite } from "@/utils/store";
-import FavoriteItem from "./FavoriteItem";
+
 import CarsNotFound from "./CarsNotFound";
+import FavoriteItem from "./FavoriteItem";
+import { useAddFavorite } from "@/utils/store";
 
 const FavoriteList = () => {
   const favoriteList = useAddFavorite((state) => state.favoriteList);

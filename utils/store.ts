@@ -3,14 +3,13 @@ import {
   CapacityFilterState,
   CarState,
   FavoriteState,
-  FormState,
   ICar,
-  IFormState,
   OpenFormState,
   PriceFilterState,
   SearchState,
   TypeFilterState,
 } from "@/types/types";
+
 import { create } from "zustand";
 
 //Добавление машины в избранное

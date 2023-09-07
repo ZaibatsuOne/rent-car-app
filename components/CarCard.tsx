@@ -1,5 +1,6 @@
 "use client";
-import { FC } from "react";
+
+import { Box, Flex, Text } from "@radix-ui/themes";
 import {
   Card,
   CardContent,
@@ -9,11 +10,12 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Fuel, LifeBuoy, Users } from "lucide-react";
-import Image from "next/image";
+
 import { Button } from "./ui/button";
+import { FC } from "react";
 import { ICar } from "@/types/types";
+import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
-import { Box, Flex, Text } from "@radix-ui/themes";
 
 interface Props {
   car: ICar;

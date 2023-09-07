@@ -1,8 +1,8 @@
-import Link from "next/link";
 import CarCard from "./CarCard";
-import SectionBar from "./SectionBar";
 import { FC } from "react";
 import { ICar } from "@/types/types";
+import Link from "next/link";
+import SectionBar from "./SectionBar";
 
 interface Props {
   cars: ICar[];

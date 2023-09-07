@@ -1,11 +1,10 @@
-// "use client";
-import { ICar } from "@/types/types";
-import { FC, useState } from "react";
-import { Button } from "../ui/button";
 import { Flex, Grid, Heading, Text } from "@radix-ui/themes";
-import StarRating from "../ui/StarRating";
+
 import AddFavorite from "../ui/AddFavorite";
-import { useAddFavorite } from "@/utils/store";
+import { Button } from "../ui/button";
+import { FC } from "react";
+import { ICar } from "@/types/types";
+import StarRating from "../ui/StarRating";
 
 interface Props {
   car: ICar;

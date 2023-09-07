@@ -1,15 +1,16 @@
-import FooterColumn from "./FooterColumn";
-import { FC } from "react";
-import { footerColumn as footerList } from "@/data/data";
 import { Flex, Text } from "@radix-ui/themes";
+
+import { FC } from "react";
+import FooterColumn from "./FooterColumn";
 import { Separator } from "./ui/separator";
+import { footerColumn as footerList } from "@/data/data";
 
 const Footer: FC = () => {
   return (
     <>
       <Separator />
       <footer className="bg-white pb-[60px] pt-20">
-        <div className="gap-9  container flex flex-col">
+        <div className="gap-9 container flex flex-col">
           <Flex
             direction="row"
             justify="between"

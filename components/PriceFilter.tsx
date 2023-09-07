@@ -1,6 +1,8 @@
 "use client";
+
 import { ChangeEvent, FC } from "react";
 import { Flex, Text } from "@radix-ui/themes";
+
 import { usePriceFilter } from "@/utils/store";
 
 interface Props {}

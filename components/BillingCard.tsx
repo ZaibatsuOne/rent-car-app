@@ -1,5 +1,6 @@
-import { FC, PropsWithChildren } from "react";
 import { Card, CardTitle } from "./ui/card";
+import { FC, PropsWithChildren } from "react";
+
 import { Text } from "@radix-ui/themes";
 import { cn } from "@/lib/utils";
 

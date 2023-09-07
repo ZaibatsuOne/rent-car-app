@@ -1,9 +1,9 @@
 import CarCard from "./CarCard";
-import Link from "next/link";
-import SectionBar from "./SectionBar";
 import { FC } from "react";
 import { Grid } from "@radix-ui/themes";
 import { ICar } from "@/types/types";
+import Link from "next/link";
+import SectionBar from "./SectionBar";
 
 interface Props {
   columns?: string;

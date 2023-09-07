@@ -1,7 +1,7 @@
 import CapacityFilter from "../CapacityFilter";
+import { FC } from "react";
 import PriceFilter from "../PriceFilter";
 import TypeFilter from "../TypeFilter";
-import { FC } from "react";
 
 interface Props {}
 

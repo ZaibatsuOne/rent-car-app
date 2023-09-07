@@ -1,6 +1,7 @@
-import { FC } from "react";
-import { Button } from "./ui/button";
 import { Flex, Heading } from "@radix-ui/themes";
+
+import { Button } from "./ui/button";
+import { FC } from "react";
 
 interface Props {
   title: string;

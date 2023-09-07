@@ -1,8 +1,10 @@
 "use client";
-import Image from "next/image";
-import { ICar } from "@/types/types";
+
 import { FC, useState } from "react";
+
 import { Flex } from "@radix-ui/themes";
+import { ICar } from "@/types/types";
+import Image from "next/image";
 
 interface Props {
   car: ICar;

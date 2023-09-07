@@ -1,9 +1,9 @@
-import PopularCar from "./PopularCar";
-import RecommendCars from "./RecommendCars";
 import { Button } from "./ui/button";
 import { FC } from "react";
 import { Flex } from "@radix-ui/themes";
 import { ICar } from "@/types/types";
+import PopularCar from "./PopularCar";
+import RecommendCars from "./RecommendCars";
 
 interface Props {
   cars: ICar[];

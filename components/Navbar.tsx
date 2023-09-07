@@ -1,8 +1,9 @@
-import SearchBar from "./SearchBar";
-import UserAccountNav from "./UserAccountNav";
-import Link from "next/link";
 import { Flex, Heading } from "@radix-ui/themes";
+
+import Link from "next/link";
+import SearchBar from "./SearchBar";
 import { Separator } from "./ui/separator";
+import UserAccountNav from "./UserAccountNav";
 
 const NavBar = () => {
   return (

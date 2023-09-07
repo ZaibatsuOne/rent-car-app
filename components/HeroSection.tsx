@@ -1,8 +1,8 @@
 "use client";
 
 import Carousel from "nuka-carousel";
-import HeroItem from "./HeroItem";
 import { FC } from "react";
+import HeroItem from "./HeroItem";
 import { heroSectionData } from "@/data/data";
 import { useMediaQuery } from "react-responsive";
 

@@ -1,16 +1,17 @@
-import { ICar } from "@/types/types";
-import BillingCard from "./BillingCard";
-import { FC } from "react";
-import Image from "next/image";
 import { Fuel, LifeBuoy, Users } from "lucide-react";
-import { Separator } from "./ui/separator";
 import {
   TextField,
   TextFieldInput,
   TextFieldRoot,
   TextFieldSlot,
 } from "@radix-ui/themes";
+
+import BillingCard from "./BillingCard";
 import { Button } from "./ui/button";
+import { FC } from "react";
+import { ICar } from "@/types/types";
+import Image from "next/image";
+import { Separator } from "./ui/separator";
 
 interface Props {
   car: ICar;

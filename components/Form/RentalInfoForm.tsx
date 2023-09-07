@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import BillingCard from "../BillingCard";
+
 import {
   Select,
   SelectContent,
@@ -8,8 +7,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import { Label } from "../ui/label";
+
+import BillingCard from "../BillingCard";
 import { Flex } from "@radix-ui/themes";
+import { Label } from "../ui/label";
 
 const RentalInfoForm = () => {
   return (

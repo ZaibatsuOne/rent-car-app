@@ -1,6 +1,6 @@
-import { Label } from "@/components/ui/label";
-import { Flex } from "@radix-ui/themes";
 import { FC } from "react";
+import { Flex } from "@radix-ui/themes";
+import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 interface Props {

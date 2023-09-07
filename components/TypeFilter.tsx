@@ -1,8 +1,5 @@
 "use client";
 
-import { FC } from "react";
-import { useForm } from "react-hook-form";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
@@ -11,7 +8,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+
+import { Checkbox } from "@/components/ui/checkbox";
+import { FC } from "react";
 import { carType } from "@/data/data";
+import { useForm } from "react-hook-form";
 import { useTypeFilter } from "@/utils/store";
 
 interface Props {}
